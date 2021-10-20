@@ -1,0 +1,110 @@
+/** @format */
+
+.btn,
+.primary,
+.secondary,
+.primaryDisabled {
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  font-size: 13px;
+  line-height: 19px;
+  font-family: poppins;
+  padding: 15px 26px;
+  border-radius: 10px;
+  margin-right: 15px;
+  outline: none;
+  border: none;
+  min-width: 114px;
+  letter-spacing: 0.5px;
+}
+
+.primary {
+  background: #324ee2;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #6178f0;
+}
+.primary:active {
+  background: #1e37b6;
+}
+
+.secondary {
+  color: #324ee2;
+  background: rgb(50, 78, 226, 0.1);
+}
+.secondary:hover {
+  background: #f4f6ff;
+}
+.secondary:active {
+  background: #d9dcf6;
+}
+
+.primaryDisabled {
+  background: #324ee2;
+  color: #ffffff;
+}
+.primaryDisabled:hover {
+  cursor: not-allowed;
+}
+
+.select,
+.selected {
+  border: 1px solid #324ee2;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #324ee2;
+  float: right;
+  padding: 9px 25px;
+  outline: none;
+  font-family: poppins;
+  letter-spacing: 0.5px;
+}
+.select {
+  background: #ffffff;
+}
+.selected {
+  background: #f4f6ff;
+}
+
+@media only screen and (max-width: 768px) {
+  .secondary {
+    width: 25%;
+    margin-right: 10px;
+    min-width: 20px;
+  }
+  .primary {
+    min-width: 20px;
+    margin-right: 0px;
+    width: 25%;
+  }
+  .primaryDisabled {
+    min-width: 20px;
+    margin-right: 0px;
+    width: 25%;
+  }
+  .select,
+  .selected {
+    padding: 9px;
+    width: 100%;
+  }
+
+  .marAuto {
+    margin: auto;
+    width: 100%;
+    padding: 15px 26px;
+  }
+  .btn,
+  .primary,
+  .secondary,
+  .primaryDisabled {
+    padding: 15px 35px;
+  }
+}

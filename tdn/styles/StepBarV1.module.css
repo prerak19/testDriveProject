@@ -1,0 +1,122 @@
+/** @format */
+
+.main {
+  display: flex;
+  background: #f5f6fe;
+  border-radius: 10px;
+  width: 100% !important;
+}
+
+.main div {
+  text-decoration: none;
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #324ee2;
+  line-height: 40px;
+  cursor: pointer;
+}
+.firstPage {
+  color: #ffffff !important;
+  background-color: #324ee2;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.firstPage:after {
+  position: absolute;
+  right: -12px;
+  content: ' ';
+  border-style: solid;
+  border-width: 20px 0 20px 12px;
+  border-color: transparent transparent transparent #324ee2;
+}
+.startActive {
+  color: #ffffff !important;
+  background-color: #324ee2;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+}
+
+.startActive:after {
+  position: absolute;
+  right: -12px;
+  content: ' ';
+  border-style: solid;
+  border-width: 20px 0 20px 12px;
+  border-color: transparent transparent transparent #324ee2;
+}
+.startActive:before {
+  position: absolute;
+  left: 0px;
+  content: ' ';
+  border-style: solid;
+  border-width: 20px 0 20px 12px;
+  border-color: transparent transparent transparent #f5f6fe;
+}
+
+.lastActive {
+  color: #ffffff !important;
+  background-color: #324ee2;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.lastActive:before {
+  position: absolute;
+  left: 0px;
+  content: ' ';
+  border-style: solid;
+  border-width: 20px 0 20px 12px;
+  border-color: transparent transparent transparent #f5f6fe;
+}
+.hideForLaptop {
+  display: none !important;
+}
+.hideForMobile {
+  width: 100% !important;
+}
+.width20 {
+  max-width: 20% !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 90% !important;
+    margin: auto;
+  }
+
+  .hideForMobile {
+    display: none !important;
+    /* width: 100% !important; */
+  }
+  .hideForLaptop {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .main div {
+    line-height: 25px !important;
+  }
+  .firstPage:after {
+    border-width: 12.5px 0 12.5px 7px;
+    right: -7px;
+  }
+  .startActive:after {
+    border-width: 12.5px 0 12.5px 7px;
+    right: -7px;
+  }
+  .startActive:before {
+    border-width: 12.5px 0 12.5px 7px;
+  }
+  .lastActive:before {
+    border-width: 12.5px 0 12.5px 7px;
+  }
+}

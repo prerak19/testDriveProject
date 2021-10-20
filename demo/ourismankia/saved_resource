@@ -1,0 +1,2107 @@
+/*! Sizzle v2.3.4-pre | (c) JS Foundation and other contributors | js.foundation */
+/* This code has been modified - Removed code that was getting tripped up due to requirejs */
+/* Removed: "function"==typeof define&&define.amd?define(function(){return ue}): */
+!function(e){var t,n,r,i,o,u,l,a,c,s,f,d,p,h,g,m,y,w,v,b="sizzle"+1*new Date,N=e.document,x=0,C=0,E=le(),D=le(),S=le(),A=le(),T=function(e,t){return e===t&&(f=!0),0},L={}.hasOwnProperty,I=[],q=I.pop,B=I.push,R=I.push,$=I.slice,k=function(e,t){for(var n=0,r=e.length;n<r;n++)if(e[n]===t)return n;return-1},P="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",z="[\\x20\\t\\r\\n\\f]",H="(?:\\\\.|[\\w-]|[^\0-\\xa0])+",M="\\["+z+"*("+H+")(?:"+z+"*([*^$|!~]?=)"+z+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+H+"))|)"+z+"*\\]",F=":("+H+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+M+")*)|.*)\\)|)",O=new RegExp(z+"+","g"),j=new RegExp("^"+z+"+|((?:^|[^\\\\])(?:\\\\.)*)"+z+"+$","g"),G=new RegExp("^"+z+"*,"+z+"*"),U=new RegExp("^"+z+"*([>+~]|"+z+")"+z+"*"),V=new RegExp(z+"|>"),X=new RegExp(F),J=new RegExp("^"+H+"$"),K={ID:new RegExp("^#("+H+")"),CLASS:new RegExp("^\\.("+H+")"),TAG:new RegExp("^("+H+"|[*])"),ATTR:new RegExp("^"+M),PSEUDO:new RegExp("^"+F),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+z+"*(even|odd|(([+-]|)(\\d*)n|)"+z+"*(?:([+-]|)"+z+"*(\\d+)|))"+z+"*\\)|)","i"),bool:new RegExp("^(?:"+P+")$","i"),needsContext:new RegExp("^"+z+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+z+"*((?:-\\d)?\\d*)"+z+"*\\)|)(?=[^-]|$)","i")},Q=/^(?:input|select|textarea|button)$/i,W=/^h\d$/i,Y=/^[^{]+\{\s*\[native \w/,Z=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,_=/[+~]/,ee=new RegExp("\\\\([\\da-f]{1,6}"+z+"?|("+z+")|.)","ig"),te=function(e,t,n){var r="0x"+t-65536;return r!==r||n?t:r<0?String.fromCharCode(r+65536):String.fromCharCode(r>>10|55296,1023&r|56320)},ne=/([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,re=function(e,t){return t?"\0"===e?"\ufffd":e.slice(0,-1)+"\\"+e.charCodeAt(e.length-1).toString(16)+" ":"\\"+e},ie=function(){d()},oe=ye(function(e){return!0===e.disabled&&"fieldset"===e.nodeName.toLowerCase()},{dir:"parentNode",next:"legend"});try{R.apply(I=$.call(N.childNodes),N.childNodes),I[N.childNodes.length].nodeType}catch(e){R={apply:I.length?function(e,t){B.apply(e,$.call(t))}:function(e,t){var n=e.length,r=0;while(e[n++]=t[r++]);e.length=n-1}}}function ue(e,t,r,i){var o,l,c,s,f,h,y,w=t&&t.ownerDocument,x=t?t.nodeType:9;if(r=r||[],"string"!=typeof e||!e||1!==x&&9!==x&&11!==x)return r;if(!i&&((t?t.ownerDocument||t:N)!==p&&d(t),t=t||p,g)){if(11!==x&&(f=Z.exec(e)))if(o=f[1]){if(9===x){if(!(c=t.getElementById(o)))return r;if(c.id===o)return r.push(c),r}else if(w&&(c=w.getElementById(o))&&v(t,c)&&c.id===o)return r.push(c),r}else{if(f[2])return R.apply(r,t.getElementsByTagName(e)),r;if((o=f[3])&&n.getElementsByClassName&&t.getElementsByClassName)return R.apply(r,t.getElementsByClassName(o)),r}if(n.qsa&&!A[e+" "]&&(!m||!m.test(e))&&(1!==x||"object"!==t.nodeName.toLowerCase())){if(y=e,w=t,1===x&&V.test(e)){(s=t.getAttribute("id"))?s=s.replace(ne,re):t.setAttribute("id",s=b),l=(h=u(e)).length;while(l--)h[l]="#"+s+" "+me(h[l]);y=h.join(","),w=_.test(e)&&he(t.parentNode)||t}try{return R.apply(r,w.querySelectorAll(y)),r}catch(t){A(e,!0)}finally{s===b&&t.removeAttribute("id")}}}return a(e.replace(j,"$1"),t,r,i)}function le(){var e=[];function t(n,i){return e.push(n+" ")>r.cacheLength&&delete t[e.shift()],t[n+" "]=i}return t}function ae(e){return e[b]=!0,e}function ce(e){var t=p.createElement("fieldset");try{return!!e(t)}catch(e){return!1}finally{t.parentNode&&t.parentNode.removeChild(t),t=null}}function se(e,t){var n=e.split("|"),i=n.length;while(i--)r.attrHandle[n[i]]=t}function fe(e,t){var n=t&&e,r=n&&1===e.nodeType&&1===t.nodeType&&e.sourceIndex-t.sourceIndex;if(r)return r;if(n)while(n=n.nextSibling)if(n===t)return-1;return e?1:-1}function de(e){return function(t){return"form"in t?t.parentNode&&!1===t.disabled?"label"in t?"label"in t.parentNode?t.parentNode.disabled===e:t.disabled===e:t.isDisabled===e||t.isDisabled!==!e&&oe(t)===e:t.disabled===e:"label"in t&&t.disabled===e}}function pe(e){return ae(function(t){return t=+t,ae(function(n,r){var i,o=e([],n.length,t),u=o.length;while(u--)n[i=o[u]]&&(n[i]=!(r[i]=n[i]))})})}function he(e){return e&&void 0!==e.getElementsByTagName&&e}n=ue.support={},o=ue.isXML=function(e){var t=e&&(e.ownerDocument||e).documentElement;return!!t&&"HTML"!==t.nodeName},d=ue.setDocument=function(e){var t,i,u=e?e.ownerDocument||e:N;return u!==p&&9===u.nodeType&&u.documentElement?(p=u,h=p.documentElement,g=!o(p),N!==p&&(i=p.defaultView)&&i.top!==i&&(i.addEventListener?i.addEventListener("unload",ie,!1):i.attachEvent&&i.attachEvent("onunload",ie)),n.attributes=ce(function(e){return e.className="i",!e.getAttribute("className")}),n.getElementsByTagName=ce(function(e){return e.appendChild(p.createComment("")),!e.getElementsByTagName("*").length}),n.getElementsByClassName=Y.test(p.getElementsByClassName),n.getById=ce(function(e){return h.appendChild(e).id=b,!p.getElementsByName||!p.getElementsByName(b).length}),n.getById?(r.filter.ID=function(e){var t=e.replace(ee,te);return function(e){return e.getAttribute("id")===t}},r.find.ID=function(e,t){if(void 0!==t.getElementById&&g){var n=t.getElementById(e);return n?[n]:[]}}):(r.filter.ID=function(e){var t=e.replace(ee,te);return function(e){var n=void 0!==e.getAttributeNode&&e.getAttributeNode("id");return n&&n.value===t}},r.find.ID=function(e,t){if(void 0!==t.getElementById&&g){var n,r,i,o=t.getElementById(e);if(o){if((n=o.getAttributeNode("id"))&&n.value===e)return[o];i=t.getElementsByName(e),r=0;while(o=i[r++])if((n=o.getAttributeNode("id"))&&n.value===e)return[o]}return[]}}),r.find.TAG=n.getElementsByTagName?function(e,t){return void 0!==t.getElementsByTagName?t.getElementsByTagName(e):n.qsa?t.querySelectorAll(e):void 0}:function(e,t){var n,r=[],i=0,o=t.getElementsByTagName(e);if("*"===e){while(n=o[i++])1===n.nodeType&&r.push(n);return r}return o},r.find.CLASS=n.getElementsByClassName&&function(e,t){if(void 0!==t.getElementsByClassName&&g)return t.getElementsByClassName(e)},y=[],m=[],(n.qsa=Y.test(p.querySelectorAll))&&(ce(function(e){h.appendChild(e).innerHTML="<a id='"+b+"'></a><select id='"+b+"-\r\\' msallowcapture=''><option selected=''></option></select>",e.querySelectorAll("[msallowcapture^='']").length&&m.push("[*^$]="+z+"*(?:''|\"\")"),e.querySelectorAll("[selected]").length||m.push("\\["+z+"*(?:value|"+P+")"),e.querySelectorAll("[id~="+b+"-]").length||m.push("~="),e.querySelectorAll(":checked").length||m.push(":checked"),e.querySelectorAll("a#"+b+"+*").length||m.push(".#.+[+~]")}),ce(function(e){e.innerHTML="<a href='' disabled='disabled'></a><select disabled='disabled'><option/></select>";var t=p.createElement("input");t.setAttribute("type","hidden"),e.appendChild(t).setAttribute("name","D"),e.querySelectorAll("[name=d]").length&&m.push("name"+z+"*[*^$|!~]?="),2!==e.querySelectorAll(":enabled").length&&m.push(":enabled",":disabled"),h.appendChild(e).disabled=!0,2!==e.querySelectorAll(":disabled").length&&m.push(":enabled",":disabled"),e.querySelectorAll("*,:x"),m.push(",.*:")})),(n.matchesSelector=Y.test(w=h.matches||h.webkitMatchesSelector||h.mozMatchesSelector||h.oMatchesSelector||h.msMatchesSelector))&&ce(function(e){n.disconnectedMatch=w.call(e,"*"),w.call(e,"[s!='']:x"),y.push("!=",F)}),m=m.length&&new RegExp(m.join("|")),y=y.length&&new RegExp(y.join("|")),t=Y.test(h.compareDocumentPosition),v=t||Y.test(h.contains)?function(e,t){var n=9===e.nodeType?e.documentElement:e,r=t&&t.parentNode;return e===r||!(!r||1!==r.nodeType||!(n.contains?n.contains(r):e.compareDocumentPosition&&16&e.compareDocumentPosition(r)))}:function(e,t){if(t)while(t=t.parentNode)if(t===e)return!0;return!1},T=t?function(e,t){if(e===t)return f=!0,0;var r=!e.compareDocumentPosition-!t.compareDocumentPosition;return r||(1&(r=(e.ownerDocument||e)===(t.ownerDocument||t)?e.compareDocumentPosition(t):1)||!n.sortDetached&&t.compareDocumentPosition(e)===r?e===p||e.ownerDocument===N&&v(N,e)?-1:t===p||t.ownerDocument===N&&v(N,t)?1:s?k(s,e)-k(s,t):0:4&r?-1:1)}:function(e,t){if(e===t)return f=!0,0;var n,r=0,i=e.parentNode,o=t.parentNode,u=[e],l=[t];if(!i||!o)return e===p?-1:t===p?1:i?-1:o?1:s?k(s,e)-k(s,t):0;if(i===o)return fe(e,t);n=e;while(n=n.parentNode)u.unshift(n);n=t;while(n=n.parentNode)l.unshift(n);while(u[r]===l[r])r++;return r?fe(u[r],l[r]):u[r]===N?-1:l[r]===N?1:0},p):p},ue.matches=function(e,t){return ue(e,null,null,t)},ue.matchesSelector=function(e,t){if((e.ownerDocument||e)!==p&&d(e),n.matchesSelector&&g&&!A[t+" "]&&(!y||!y.test(t))&&(!m||!m.test(t)))try{var r=w.call(e,t);if(r||n.disconnectedMatch||e.document&&11!==e.document.nodeType)return r}catch(e){A(t,!0)}return ue(t,p,null,[e]).length>0},ue.contains=function(e,t){return(e.ownerDocument||e)!==p&&d(e),v(e,t)},ue.attr=function(e,t){(e.ownerDocument||e)!==p&&d(e);var i=r.attrHandle[t.toLowerCase()],o=i&&L.call(r.attrHandle,t.toLowerCase())?i(e,t,!g):void 0;return void 0!==o?o:n.attributes||!g?e.getAttribute(t):(o=e.getAttributeNode(t))&&o.specified?o.value:null},ue.escape=function(e){return(e+"").replace(ne,re)},ue.error=function(e){throw new Error("Syntax error, unrecognized expression: "+e)},ue.uniqueSort=function(e){var t,r=[],i=0,o=0;if(f=!n.detectDuplicates,s=!n.sortStable&&e.slice(0),e.sort(T),f){while(t=e[o++])t===e[o]&&(i=r.push(o));while(i--)e.splice(r[i],1)}return s=null,e},i=ue.getText=function(e){var t,n="",r=0,o=e.nodeType;if(o){if(1===o||9===o||11===o){if("string"==typeof e.textContent)return e.textContent;for(e=e.firstChild;e;e=e.nextSibling)n+=i(e)}else if(3===o||4===o)return e.nodeValue}else while(t=e[r++])n+=i(t);return n},(r=ue.selectors={cacheLength:50,createPseudo:ae,match:K,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(e){return e[1]=e[1].replace(ee,te),e[3]=(e[3]||e[4]||e[5]||"").replace(ee,te),"~="===e[2]&&(e[3]=" "+e[3]+" "),e.slice(0,4)},CHILD:function(e){return e[1]=e[1].toLowerCase(),"nth"===e[1].slice(0,3)?(e[3]||ue.error(e[0]),e[4]=+(e[4]?e[5]+(e[6]||1):2*("even"===e[3]||"odd"===e[3])),e[5]=+(e[7]+e[8]||"odd"===e[3])):e[3]&&ue.error(e[0]),e},PSEUDO:function(e){var t,n=!e[6]&&e[2];return K.CHILD.test(e[0])?null:(e[3]?e[2]=e[4]||e[5]||"":n&&X.test(n)&&(t=u(n,!0))&&(t=n.indexOf(")",n.length-t)-n.length)&&(e[0]=e[0].slice(0,t),e[2]=n.slice(0,t)),e.slice(0,3))}},filter:{TAG:function(e){var t=e.replace(ee,te).toLowerCase();return"*"===e?function(){return!0}:function(e){return e.nodeName&&e.nodeName.toLowerCase()===t}},CLASS:function(e){var t=E[e+" "];return t||(t=new RegExp("(^|"+z+")"+e+"("+z+"|$)"))&&E(e,function(e){return t.test("string"==typeof e.className&&e.className||void 0!==e.getAttribute&&e.getAttribute("class")||"")})},ATTR:function(e,t,n){return function(r){var i=ue.attr(r,e);return null==i?"!="===t:!t||(i+="","="===t?i===n:"!="===t?i!==n:"^="===t?n&&0===i.indexOf(n):"*="===t?n&&i.indexOf(n)>-1:"$="===t?n&&i.slice(-n.length)===n:"~="===t?(" "+i.replace(O," ")+" ").indexOf(n)>-1:"|="===t&&(i===n||i.slice(0,n.length+1)===n+"-"))}},CHILD:function(e,t,n,r,i){var o="nth"!==e.slice(0,3),u="last"!==e.slice(-4),l="of-type"===t;return 1===r&&0===i?function(e){return!!e.parentNode}:function(t,n,a){var c,s,f,d,p,h,g=o!==u?"nextSibling":"previousSibling",m=t.parentNode,y=l&&t.nodeName.toLowerCase(),w=!a&&!l,v=!1;if(m){if(o){while(g){d=t;while(d=d[g])if(l?d.nodeName.toLowerCase()===y:1===d.nodeType)return!1;h=g="only"===e&&!h&&"nextSibling"}return!0}if(h=[u?m.firstChild:m.lastChild],u&&w){v=(p=(c=(s=(f=(d=m)[b]||(d[b]={}))[d.uniqueID]||(f[d.uniqueID]={}))[e]||[])[0]===x&&c[1])&&c[2],d=p&&m.childNodes[p];while(d=++p&&d&&d[g]||(v=p=0)||h.pop())if(1===d.nodeType&&++v&&d===t){s[e]=[x,p,v];break}}else if(w&&(v=p=(c=(s=(f=(d=t)[b]||(d[b]={}))[d.uniqueID]||(f[d.uniqueID]={}))[e]||[])[0]===x&&c[1]),!1===v)while(d=++p&&d&&d[g]||(v=p=0)||h.pop())if((l?d.nodeName.toLowerCase()===y:1===d.nodeType)&&++v&&(w&&((s=(f=d[b]||(d[b]={}))[d.uniqueID]||(f[d.uniqueID]={}))[e]=[x,v]),d===t))break;return(v-=i)===r||v%r==0&&v/r>=0}}},PSEUDO:function(e,t){var n,i=r.pseudos[e]||r.setFilters[e.toLowerCase()]||ue.error("unsupported pseudo: "+e);return i[b]?i(t):i.length>1?(n=[e,e,"",t],r.setFilters.hasOwnProperty(e.toLowerCase())?ae(function(e,n){var r,o=i(e,t),u=o.length;while(u--)e[r=k(e,o[u])]=!(n[r]=o[u])}):function(e){return i(e,0,n)}):i}},pseudos:{not:ae(function(e){var t=[],n=[],r=l(e.replace(j,"$1"));return r[b]?ae(function(e,t,n,i){var o,u=r(e,null,i,[]),l=e.length;while(l--)(o=u[l])&&(e[l]=!(t[l]=o))}):function(e,i,o){return t[0]=e,r(t,null,o,n),t[0]=null,!n.pop()}}),has:ae(function(e){return function(t){return ue(e,t).length>0}}),contains:ae(function(e){return e=e.replace(ee,te),function(t){return(t.textContent||t.innerText||i(t)).indexOf(e)>-1}}),lang:ae(function(e){return J.test(e||"")||ue.error("unsupported lang: "+e),e=e.replace(ee,te).toLowerCase(),function(t){var n;do{if(n=g?t.lang:t.getAttribute("xml:lang")||t.getAttribute("lang"))return(n=n.toLowerCase())===e||0===n.indexOf(e+"-")}while((t=t.parentNode)&&1===t.nodeType);return!1}}),target:function(t){var n=e.location&&e.location.hash;return n&&n.slice(1)===t.id},root:function(e){return e===h},focus:function(e){return e===p.activeElement&&(!p.hasFocus||p.hasFocus())&&!!(e.type||e.href||~e.tabIndex)},enabled:de(!1),disabled:de(!0),checked:function(e){var t=e.nodeName.toLowerCase();return"input"===t&&!!e.checked||"option"===t&&!!e.selected},selected:function(e){return e.parentNode&&e.parentNode.selectedIndex,!0===e.selected},empty:function(e){for(e=e.firstChild;e;e=e.nextSibling)if(e.nodeType<6)return!1;return!0},parent:function(e){return!r.pseudos.empty(e)},header:function(e){return W.test(e.nodeName)},input:function(e){return Q.test(e.nodeName)},button:function(e){var t=e.nodeName.toLowerCase();return"input"===t&&"button"===e.type||"button"===t},text:function(e){var t;return"input"===e.nodeName.toLowerCase()&&"text"===e.type&&(null==(t=e.getAttribute("type"))||"text"===t.toLowerCase())},first:pe(function(){return[0]}),last:pe(function(e,t){return[t-1]}),eq:pe(function(e,t,n){return[n<0?n+t:n]}),even:pe(function(e,t){for(var n=0;n<t;n+=2)e.push(n);return e}),odd:pe(function(e,t){for(var n=1;n<t;n+=2)e.push(n);return e}),lt:pe(function(e,t,n){for(var r=n<0?n+t:n>t?t:n;--r>=0;)e.push(r);return e}),gt:pe(function(e,t,n){for(var r=n<0?n+t:n;++r<t;)e.push(r);return e})}}).pseudos.nth=r.pseudos.eq;for(t in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})r.pseudos[t]=function(e){return function(t){return"input"===t.nodeName.toLowerCase()&&t.type===e}}(t);for(t in{submit:!0,reset:!0})r.pseudos[t]=function(e){return function(t){var n=t.nodeName.toLowerCase();return("input"===n||"button"===n)&&t.type===e}}(t);function ge(){}ge.prototype=r.filters=r.pseudos,r.setFilters=new ge,u=ue.tokenize=function(e,t){var n,i,o,u,l,a,c,s=D[e+" "];if(s)return t?0:s.slice(0);l=e,a=[],c=r.preFilter;while(l){n&&!(i=G.exec(l))||(i&&(l=l.slice(i[0].length)||l),a.push(o=[])),n=!1,(i=U.exec(l))&&(n=i.shift(),o.push({value:n,type:i[0].replace(j," ")}),l=l.slice(n.length));for(u in r.filter)!(i=K[u].exec(l))||c[u]&&!(i=c[u](i))||(n=i.shift(),o.push({value:n,type:u,matches:i}),l=l.slice(n.length));if(!n)break}return t?l.length:l?ue.error(e):D(e,a).slice(0)};function me(e){for(var t=0,n=e.length,r="";t<n;t++)r+=e[t].value;return r}function ye(e,t,n){var r=t.dir,i=t.next,o=i||r,u=n&&"parentNode"===o,l=C++;return t.first?function(t,n,i){while(t=t[r])if(1===t.nodeType||u)return e(t,n,i);return!1}:function(t,n,a){var c,s,f,d=[x,l];if(a){while(t=t[r])if((1===t.nodeType||u)&&e(t,n,a))return!0}else while(t=t[r])if(1===t.nodeType||u)if(f=t[b]||(t[b]={}),s=f[t.uniqueID]||(f[t.uniqueID]={}),i&&i===t.nodeName.toLowerCase())t=t[r]||t;else{if((c=s[o])&&c[0]===x&&c[1]===l)return d[2]=c[2];if(s[o]=d,d[2]=e(t,n,a))return!0}return!1}}function we(e){return e.length>1?function(t,n,r){var i=e.length;while(i--)if(!e[i](t,n,r))return!1;return!0}:e[0]}function ve(e,t,n){for(var r=0,i=t.length;r<i;r++)ue(e,t[r],n);return n}function be(e,t,n,r,i){for(var o,u=[],l=0,a=e.length,c=null!=t;l<a;l++)(o=e[l])&&(n&&!n(o,r,i)||(u.push(o),c&&t.push(l)));return u}function Ne(e,t,n,r,i,o){return r&&!r[b]&&(r=Ne(r)),i&&!i[b]&&(i=Ne(i,o)),ae(function(o,u,l,a){var c,s,f,d=[],p=[],h=u.length,g=o||ve(t||"*",l.nodeType?[l]:l,[]),m=!e||!o&&t?g:be(g,d,e,l,a),y=n?i||(o?e:h||r)?[]:u:m;if(n&&n(m,y,l,a),r){c=be(y,p),r(c,[],l,a),s=c.length;while(s--)(f=c[s])&&(y[p[s]]=!(m[p[s]]=f))}if(o){if(i||e){if(i){c=[],s=y.length;while(s--)(f=y[s])&&c.push(m[s]=f);i(null,y=[],c,a)}s=y.length;while(s--)(f=y[s])&&(c=i?k(o,f):d[s])>-1&&(o[c]=!(u[c]=f))}}else y=be(y===u?y.splice(h,y.length):y),i?i(null,u,y,a):R.apply(u,y)})}function xe(e){for(var t,n,i,o=e.length,u=r.relative[e[0].type],l=u||r.relative[" "],a=u?1:0,s=ye(function(e){return e===t},l,!0),f=ye(function(e){return k(t,e)>-1},l,!0),d=[function(e,n,r){var i=!u&&(r||n!==c)||((t=n).nodeType?s(e,n,r):f(e,n,r));return t=null,i}];a<o;a++)if(n=r.relative[e[a].type])d=[ye(we(d),n)];else{if((n=r.filter[e[a].type].apply(null,e[a].matches))[b]){for(i=++a;i<o;i++)if(r.relative[e[i].type])break;return Ne(a>1&&we(d),a>1&&me(e.slice(0,a-1).concat({value:" "===e[a-2].type?"*":""})).replace(j,"$1"),n,a<i&&xe(e.slice(a,i)),i<o&&xe(e=e.slice(i)),i<o&&me(e))}d.push(n)}return we(d)}function Ce(e,t){var n=t.length>0,i=e.length>0,o=function(o,u,l,a,s){var f,h,m,y=0,w="0",v=o&&[],b=[],N=c,C=o||i&&r.find.TAG("*",s),E=x+=null==N?1:Math.random()||.1,D=C.length;for(s&&(c=u===p||u||s);w!==D&&null!=(f=C[w]);w++){if(i&&f){h=0,u||f.ownerDocument===p||(d(f),l=!g);while(m=e[h++])if(m(f,u||p,l)){a.push(f);break}s&&(x=E)}n&&((f=!m&&f)&&y--,o&&v.push(f))}if(y+=w,n&&w!==y){h=0;while(m=t[h++])m(v,b,u,l);if(o){if(y>0)while(w--)v[w]||b[w]||(b[w]=q.call(a));b=be(b)}R.apply(a,b),s&&!o&&b.length>0&&y+t.length>1&&ue.uniqueSort(a)}return s&&(x=E,c=N),v};return n?ae(o):o}l=ue.compile=function(e,t){var n,r=[],i=[],o=S[e+" "];if(!o){t||(t=u(e)),n=t.length;while(n--)(o=xe(t[n]))[b]?r.push(o):i.push(o);(o=S(e,Ce(i,r))).selector=e}return o},a=ue.select=function(e,t,n,i){var o,a,c,s,f,d="function"==typeof e&&e,p=!i&&u(e=d.selector||e);if(n=n||[],1===p.length){if((a=p[0]=p[0].slice(0)).length>2&&"ID"===(c=a[0]).type&&9===t.nodeType&&g&&r.relative[a[1].type]){if(!(t=(r.find.ID(c.matches[0].replace(ee,te),t)||[])[0]))return n;d&&(t=t.parentNode),e=e.slice(a.shift().value.length)}o=K.needsContext.test(e)?0:a.length;while(o--){if(c=a[o],r.relative[s=c.type])break;if((f=r.find[s])&&(i=f(c.matches[0].replace(ee,te),_.test(a[0].type)&&he(t.parentNode)||t))){if(a.splice(o,1),!(e=i.length&&me(a)))return R.apply(n,i),n;break}}}return(d||l(e,p))(i,t,!g,n,!t||_.test(e)&&he(t.parentNode)||t),n},n.sortStable=b.split("").sort(T).join("")===b,n.detectDuplicates=!!f,d(),n.sortDetached=ce(function(e){return 1&e.compareDocumentPosition(p.createElement("fieldset"))}),ce(function(e){return e.innerHTML="<a href='#'></a>","#"===e.firstChild.getAttribute("href")})||se("type|href|height|width",function(e,t,n){if(!n)return e.getAttribute(t,"type"===t.toLowerCase()?1:2)}),n.attributes&&ce(function(e){return e.innerHTML="<input/>",e.firstChild.setAttribute("value",""),""===e.firstChild.getAttribute("value")})||se("value",function(e,t,n){if(!n&&"input"===e.nodeName.toLowerCase())return e.defaultValue}),ce(function(e){return null==e.getAttribute("disabled")})||se(P,function(e,t,n){var r;if(!n)return!0===e[t]?t.toLowerCase():(r=e.getAttributeNode(t))&&r.specified?r.value:null});var Ee=e.Sizzle;ue.noConflict=function(){return e.Sizzle===ue&&(e.Sizzle=Ee),ue},"undefined"!=typeof module&&module.exports?module.exports=ue:e.Sizzle=ue}(window);
+
+if(typeof Prototype !== 'undefined' && parseFloat(Prototype.Version.substr(0,3)) < 1.7 && typeof Array.prototype.toJSON !== 'undefined') {
+	var _json_stringify = JSON.stringify;
+	JSON.stringify = function(value) {
+		var _array_tojson = Array.prototype.toJSON;
+		delete Array.prototype.toJSON;
+		var r=_json_stringify(value);
+		Array.prototype.toJSON = _array_tojson;
+		return r;
+	};
+}
+
+var remarketingID = null;
+
+if(remarketingID != null && remarketingID != "null" && remarketingID != "") {
+	var _garm = document.createElement('script');
+	_garm.type = 'text/javascript';
+	_garm.async = true;
+	_garm.src = 'https://www.googletagmanager.com/gtag/js?id=AW-'+remarketingID;
+	var _garmplacement = document.getElementsByTagName('script')[0];
+    _garmplacement.parentNode.insertBefore(_garm, _garmplacement);
+}
+
+var adp_console_out = "";
+var adp_foureyes_id = "xrvtKFP3T7PK77akqQVdtrtHmlyqRG4rkEKiwkt5";
+
+(function(Sizzle) {
+	
+	function md5cycle(f,h){var i=f[0],n=f[1],r=f[2],g=f[3];i=ff(i,n,r,g,h[0],7,-680876936),g=ff(g,i,n,r,h[1],12,-389564586),r=ff(r,g,i,n,h[2],17,606105819),n=ff(n,r,g,i,h[3],22,-1044525330),i=ff(i,n,r,g,h[4],7,-176418897),g=ff(g,i,n,r,h[5],12,1200080426),r=ff(r,g,i,n,h[6],17,-1473231341),n=ff(n,r,g,i,h[7],22,-45705983),i=ff(i,n,r,g,h[8],7,1770035416),g=ff(g,i,n,r,h[9],12,-1958414417),r=ff(r,g,i,n,h[10],17,-42063),n=ff(n,r,g,i,h[11],22,-1990404162),i=ff(i,n,r,g,h[12],7,1804603682),g=ff(g,i,n,r,h[13],12,-40341101),r=ff(r,g,i,n,h[14],17,-1502002290),n=ff(n,r,g,i,h[15],22,1236535329),i=gg(i,n,r,g,h[1],5,-165796510),g=gg(g,i,n,r,h[6],9,-1069501632),r=gg(r,g,i,n,h[11],14,643717713),n=gg(n,r,g,i,h[0],20,-373897302),i=gg(i,n,r,g,h[5],5,-701558691),g=gg(g,i,n,r,h[10],9,38016083),r=gg(r,g,i,n,h[15],14,-660478335),n=gg(n,r,g,i,h[4],20,-405537848),i=gg(i,n,r,g,h[9],5,568446438),g=gg(g,i,n,r,h[14],9,-1019803690),r=gg(r,g,i,n,h[3],14,-187363961),n=gg(n,r,g,i,h[8],20,1163531501),i=gg(i,n,r,g,h[13],5,-1444681467),g=gg(g,i,n,r,h[2],9,-51403784),r=gg(r,g,i,n,h[7],14,1735328473),n=gg(n,r,g,i,h[12],20,-1926607734),i=hh(i,n,r,g,h[5],4,-378558),g=hh(g,i,n,r,h[8],11,-2022574463),r=hh(r,g,i,n,h[11],16,1839030562),n=hh(n,r,g,i,h[14],23,-35309556),i=hh(i,n,r,g,h[1],4,-1530992060),g=hh(g,i,n,r,h[4],11,1272893353),r=hh(r,g,i,n,h[7],16,-155497632),n=hh(n,r,g,i,h[10],23,-1094730640),i=hh(i,n,r,g,h[13],4,681279174),g=hh(g,i,n,r,h[0],11,-358537222),r=hh(r,g,i,n,h[3],16,-722521979),n=hh(n,r,g,i,h[6],23,76029189),i=hh(i,n,r,g,h[9],4,-640364487),g=hh(g,i,n,r,h[12],11,-421815835),r=hh(r,g,i,n,h[15],16,530742520),n=hh(n,r,g,i,h[2],23,-995338651),i=ii(i,n,r,g,h[0],6,-198630844),g=ii(g,i,n,r,h[7],10,1126891415),r=ii(r,g,i,n,h[14],15,-1416354905),n=ii(n,r,g,i,h[5],21,-57434055),i=ii(i,n,r,g,h[12],6,1700485571),g=ii(g,i,n,r,h[3],10,-1894986606),r=ii(r,g,i,n,h[10],15,-1051523),n=ii(n,r,g,i,h[1],21,-2054922799),i=ii(i,n,r,g,h[8],6,1873313359),g=ii(g,i,n,r,h[15],10,-30611744),r=ii(r,g,i,n,h[6],15,-1560198380),n=ii(n,r,g,i,h[13],21,1309151649),i=ii(i,n,r,g,h[4],6,-145523070),g=ii(g,i,n,r,h[11],10,-1120210379),r=ii(r,g,i,n,h[2],15,718787259),n=ii(n,r,g,i,h[9],21,-343485551),f[0]=add32(i,f[0]),f[1]=add32(n,f[1]),f[2]=add32(r,f[2]),f[3]=add32(g,f[3])}function cmn(f,h,i,n,r,g){return h=add32(add32(h,f),add32(n,g)),add32(h<<r|h>>>32-r,i)}function ff(f,h,i,n,r,g,t){return cmn(h&i|~h&n,f,h,r,g,t)}function gg(f,h,i,n,r,g,t){return cmn(h&n|i&~n,f,h,r,g,t)}function hh(f,h,i,n,r,g,t){return cmn(h^i^n,f,h,r,g,t)}function ii(f,h,i,n,r,g,t){return cmn(i^(h|~n),f,h,r,g,t)}function md51(f){txt="";var h,i=f.length,n=[1732584193,-271733879,-1732584194,271733878];for(h=64;h<=f.length;h+=64)md5cycle(n,md5blk(f.substring(h-64,h)));f=f.substring(h-64);var r=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];for(h=0;h<f.length;h++)r[h>>2]|=f.charCodeAt(h)<<(h%4<<3);if(r[h>>2]|=128<<(h%4<<3),h>55)for(md5cycle(n,r),h=0;16>h;h++)r[h]=0;return r[14]=8*i,md5cycle(n,r),n}function md5blk(f){var h,i=[];for(h=0;64>h;h+=4)i[h>>2]=f.charCodeAt(h)+(f.charCodeAt(h+1)<<8)+(f.charCodeAt(h+2)<<16)+(f.charCodeAt(h+3)<<24);return i}function rhex(f){for(var h="",i=0;4>i;i++)h+=hex_chr[f>>8*i+4&15]+hex_chr[f>>8*i&15];return h}function hex(f){for(var h=0;h<f.length;h++)f[h]=rhex(f[h]);return f.join("")}function md5(f){return hex(md51(f))}function add32(f,h){return f+h&4294967295}function add32(f,h){var i=(65535&f)+(65535&h),n=(f>>16)+(h>>16)+(i>>16);return n<<16|65535&i}var hex_chr="0123456789abcdef".split("");"5d41402abc4b2a76b9719d911017c592"!=md5("hello");
+
+	
+	var fourEyesURL = "foureyes.adpearance.com";
+
+	if(!Date.now) {
+		Date.now = function() { return new Date().getTime(); }
+	}
+
+	if(!Element.prototype.matches) {
+		Element.prototype.matches = 
+			Element.prototype.matchesSelector || 
+			Element.prototype.mozMatchesSelector || 
+			Element.prototype.msMatchesSelector || 
+			Element.prototype.oMatchesSelector || 
+			Element.prototype.webkitMatchesSelector || 
+			function(s) {
+				var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+					i = matches.length;
+				while (--i >= 0 && matches.item(i) !== this) {}
+				return i > -1;
+			};
+	}
+
+	if(!Element.prototype.closest) {
+		Element.prototype.closest = function(s) {
+			var el = this;
+			if (!document.documentElement.contains(el)) return null;
+			do {
+				if (el.matches(s)) return el;
+				el = el.parentElement || el.parentNode;
+			} while (el !== null && el.nodeType === 1); 
+			return null;
+		};
+	}
+
+	var _adpSwapbacks = [];
+	var _alreadyPublished = [];
+	var _alreadyRequested = [];
+	var _clog = false; //set to false prior to release
+	var _reportedSwapError = {'main':false, 'discover':false, 'blacklist':false, 'swap':false, 'buildfound':false };
+	var _vdpProcessed = false;
+	var activeTime = 0;
+	var ajaxURL = fourEyesURL == "localhost" ? "//" + fourEyesURL + "/webresources/usersession/" : "https://" + fourEyesURL + "/webresources/usersession/";
+	var clientEncodeFormName;
+	var clientGenerateFormInputName;
+	var clientGenerateFormName;
+	var cloneSelectors = ".tel>span.value,[data-phone-ref]";
+	var doNotTrackFields = "{}";
+	var externalSessionID = "xrvtKFP3T7PK77akqQVdtrtHmlyqRG4rkEKiwkt5";
+	var frameworkID = "1";
+	var gtID = "QDr8iSXPA8yg0FShWjhM3rWRgjME3z9ZSAfBAdk2";
+	var lastActiveTime = Date.now();
+	var lastUnloadEvent = 0;
+	var logcount = 0;
+	var MAX_ERRORS = 10;
+	var MAX_SWAPS = 200;
+	var PHONESWAP_MUTATIONHANDLER_DELAY = 0;
+	var MAX_FORM_INPUTS = 250;
+	var MAX_PAGE_EVENTS = 5;
+	var pageEventCount = 0;
+	var pageVisitID = "4727792346";
+	var phoneSwapSelectors = "body";
+	var processLocalStorage = false;
+	var salesIdentifier = '';
+	var serviceIdentifier = '';
+	var sess_id_name = "fe_localsession_id_";
+	var totalActiveTime = 0;
+	var trackingNumbersJSON = "{}";
+	var userSessionManager = {};
+	var updatedForms = {};
+	var formlessFormSelectorsString = "";
+	var formlessFormSelectors = formlessFormSelectorsString ? formlessFormSelectorsString.replace(/[']/g, "").split(',') : [];
+	var allowedIframeOriginsString = "'https:\/\/www2.foureyes.io','http:\/\/init-test.4eyes.co.s3-website-us-west-2.amazonaws.com','https:\/\/gateway.foureyes.io'";
+	var allowedIframeOrigins = allowedIframeOriginsString ? allowedIframeOriginsString.replace(/[']/g, "").split(',') : [];
+	var reportedUntrackedForm = false;
+	var pageFormCount = 0;
+	var recentSubmission = false;
+	var skipDomObserve = false;
+	var facebook_pixel_id = "235069021736362";
+	var disableFormTracking = false;
+	var disableStatusPing = false;
+	var gt_id_name = "fe_gt_id";
+	var did = "8415";
+
+	function supports_html5_storage() {
+		var mod = 'iiii';
+		try {
+			window.localStorage.setItem(mod, mod);
+			window.localStorage.removeItem(mod);
+			return true;
+		} catch (e) {
+			return false;
+		}
+	}
+
+	if(supports_html5_storage()) {
+		processLocalStorage = true;
+		window.localStorage.setItem(sess_id_name + did, externalSessionID);
+		window.localStorage.setItem(sess_id_name + document.domain, externalSessionID);
+	}
+
+	function ajaxGenericCommand(command, path, successCallback) {
+		var httpRequest = new XMLHttpRequest();
+
+		httpRequest.onreadystatechange = function() {
+			if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200 && successCallback) {
+				successCallback(JSON.parse(httpRequest.responseText));
+			}
+		};
+		httpRequest.open('POST', ajaxURL + path);
+		httpRequest.setRequestHeader('Accept', 'application/json');
+		httpRequest.setRequestHeader('Content-Type', 'application/json');
+		httpRequest.send(JSON.stringify(command));
+	}
+
+	function ajaxGenericSynchronousCommand(command, path, successCallback) {
+		var httpRequest = new XMLHttpRequest();
+
+		httpRequest.open('POST', ajaxURL + path, false);
+		httpRequest.setRequestHeader('Accept', 'application/json');
+		httpRequest.setRequestHeader('Content-Type', 'application/json');
+		httpRequest.send(JSON.stringify(command));
+
+		if(httpRequest.status === 200) {
+			successCallback(JSON.parse(httpRequest.responseText));
+		}
+		recentSubmission = false;
+	}
+	
+	function dispatchBeacon(command, path) {
+		try {
+			var blob = new Blob([JSON.stringify(command)], { type: 'text/plain; charset=UTF-8' });
+			navigator.sendBeacon(ajaxURL + path, blob);
+		} catch(err){
+			console.log('fe beacon error', err);
+		}
+	}
+
+	function setDataAttribute(element, key, value) {
+		if(element) {
+			if(!element.feData) {
+				element.feData = {};
+			}
+
+			element.feData[key] = value;
+		}
+	}
+
+	function getDataAttribute(element, key) {
+		var value = null;
+
+		if(element && element.feData) {
+			value = element.feData[key];
+		}
+
+		return value;
+	}
+	
+	function fieldIsRequired(element) {
+		return (element.hasAttribute("required") || element.getAttribute("aria-required") === true);
+	}
+	function findLabel(formElement, id) {
+	  var label = null;
+	  try {
+	    var sel = 'label[for="' + id.replace(/['"]+/g, '') + '"]';
+	    var labelElement = formElement.querySelector(sel);
+
+	    if(labelElement && labelElement.childNodes && labelElement.childNodes[0]) {
+	    	label = labelElement.childNodes[0].nodeValue ? labelElement.childNodes[0].nodeValue.trim() : null;
+	    	if(!label || label === '') {
+	            if(typeof labelElement.textContent === 'string'
+	                && labelElement.textContent.trim() !== '') {
+	                label = labelElement.textContent.trim();
+	            }
+	    	}
+	    }
+	  }catch(e){
+		  userSessionManager.log("ERROR", "findLabel", e.toString());
+	  }
+	  return label;
+	}
+
+	function customFormElements(form, list) {return list;}
+
+	function generateFormInputName(formInput) {
+		var generatedName = "";
+		generatedName += formInput.tagName;
+		generatedName += formInput.getAttribute('type') || 'undefined';
+		generatedName += formInput.getAttribute('name') || 'undefined';
+		if(!formInput.getAttribute('name')) {
+			generatedName += formInput.getAttribute('id') || '';
+			generatedName += formInput.getAttribute('class') || '';
+			generatedName += fieldIsRequired(formInput) || '';
+			generatedName += formInput.getAttribute('aria-label') || '';
+		}
+		generatedNameHash = md5(generatedName);
+
+		if(typeof(clientGenerateFormInputName) === typeof(Function)) {
+			generatedNameHash = clientGenerateFormInputName(formInput, generatedName, generatedNameHash);
+		}
+		return generatedNameHash;
+	}
+
+	function generateFormNameOld(form) {
+		var generatedName = "",
+			formElements = Sizzle("input, select, textarea, button", form);
+		generatedName += form.getAttribute('id') || 'undefined';
+		generatedName += form.getAttribute('name') || 'undefined';
+		generatedName += form.getAttribute('action') || 'undefined';
+
+		for(var i = 0; i < formElements.length; i++) {
+			generatedName += generateFormInputName(formElements[i]);
+		}
+		return generatedName;
+	}
+
+	function generateFormNameCurrent(form) {
+		var generatedName = "";
+		var action_value = "";
+		generatedName += form.getAttribute('id') || 'undefined';
+		generatedName += form.getAttribute('name') || 'undefined';
+		//generatedName += form.getAttribute('action');
+		action_value = form.getAttribute('action');
+		if(( action_value && action_value.length !== 0) && action_value.indexOf("?") > -1) {
+			action_value = action_value.substring(0,action_value.indexOf("?"));
+		}
+		generatedName += action_value || 'undefined';
+		generatedName += form.getAttribute('class') || 'undefined';
+		return generatedName;
+	}
+
+	function getClientHashId(form) {
+		var key = getDataAttribute(form, 'clientHashId') || '';
+
+		if(!key) {
+			var action,
+				formElements = Sizzle('input, select, textarea, button', form);
+
+			key += form.getAttribute('id') || '';
+			key += form.getAttribute('name') || '';
+			key += form.getAttribute('method') || '';
+
+			action = form.getAttribute('action') || '';
+
+			if(action && action.indexOf('?') >= 0) {
+				action = action.substring(0, action.indexOf('?'));
+			}
+
+			key += action;
+
+			for(var i = 0; i < formElements.length; i++) {
+				var formElement = formElements[i];
+
+				key += formElement.tagName;
+				key += formElement.getAttribute('id') || '';
+				key += formElement.getAttribute('name') || '';
+				key += formElement.getAttribute('type') || '';
+			}
+						key += ++pageFormCount;
+			key = md5(key);
+
+			setDataAttribute(form, 'clientHashId', key);
+		}
+		return key;
+	}
+
+	function generateFormNames(form) {
+		var formNames = {};
+		if(typeof(generateFormNameOld) === typeof(Function)) {
+			formNames.old = md5(generateFormNameOld(form));
+		}
+		var formNameCurrent = generateFormNameCurrent(form);
+		formNames.current = md5(formNameCurrent);
+		if(typeof(clientGenerateFormName) === typeof(Function)) {
+				formNames.override = clientGenerateFormName(form, formNameCurrent, formNames.current);
+		}
+		formNames.unique = getClientHashId(form);
+		return formNames;
+	}
+
+	function encodeForm(formElement) {
+		var form = {};
+		var formNames;
+		try {
+			form.submitted = getDataAttribute(formElement, "submitted");			
+			if(formElement.getAttribute('name')) {
+				form['name'] = formElement.getAttribute('name');
+			}
+			//} else if (typeof(clientEncodeFormName) === typeof(Function)) { form['name'] = clientEncodeFormName(formElement); }
+			if(getDataAttribute(formElement, "formNames")) {
+				formNames = getDataAttribute(formElement, "formNames");
+			}
+			else {
+				formNames = generateFormNames(formElement);
+			}
+			form.uniqueName = formNames.current;
+			form.oldUniqueName = formNames.old;
+			form.clientOverrideUniqueName = formNames.override;
+			form.clientHashId = formNames.unique;		
+			
+			var formInputList = [];
+			var formElements = Sizzle("input:not([type='password']):not([type='image']), select, textarea, button", formElement);
+			
+			formElements = formElements.slice(0,MAX_FORM_INPUTS);
+
+			for(var i = 0; i < formElements.length; i++) {
+				var element = formElements[i];
+				var formInput = {};
+
+				formInput.uniqueName = generateFormInputName(element);
+
+				if(!doNotTrackFields[form.uniqueName] || (doNotTrackFields[form.uniqueName] && doNotTrackFields[form.uniqueName].indexOf(formInput.uniqueName) === -1)) {
+					formInput['class'] = "FormInputState";
+					formInput.htmlID = element.getAttribute('id');
+					formInput['name'] = element.getAttribute('name');
+					formInput.type = element.getAttribute('type');
+					formInput.inputClass = element.getAttribute('class');
+					if(element.tagName != "INPUT") {
+						formInput.type = element.tagName.toLowerCase();
+					}
+					if (element.type == "select-one" || element.type == "select-multiple") {
+						formInput.value = (element.value === null ? '' : JSON.stringify(element.value));
+					} else if(element.value) {
+						formInput.value = element.value;
+					} else if(formInput.type === "button" && element.textContent) {
+						formInput.value = element.textContent;
+					} else {
+						formInput.value = '';
+					}						
+					
+					if(element.type) {
+						formInput.dynamic = false;
+					} else {
+						formInput.dynamic = true;
+					}
+					
+					formInput.required = fieldIsRequired(element);
+					
+					//often no consistent label for check box
+			        if(formInput.htmlID && formInput.type !== 'checkbox') {
+			            label = findLabel(formElement, formInput.htmlID);
+			            if(label) {
+			            	formInput.displayName = label;
+			            }
+			        }
+			        if(!formInput.displayName){
+			        	label = element.getAttribute('aria-label');
+			        	formInput.displayName = (label ? label : null);
+			        }
+			        
+					formInput.buttonPressed = getDataAttribute(element, "buttonPressed");
+					formInput.selected = getDataAttribute(element, "selected");
+					formInput.checked = false;
+					if((formInput.type === 'checkbox' || formInput.type === 'radio') && element.checked) {
+						formInput.checked = true;
+					}
+					if(!formInput['name'] || formInput['name'].indexOf('password') === -1) {
+						formInputList.push(formInput);
+					} 
+				}
+			}
+
+			formInputList = customFormElements(formElement, formInputList);
+			form.formInputList = formInputList;
+		}catch(e){
+			userSessionManager.log("ERROR", "encodeForm", e.toString());
+		}
+
+		return form;
+	}
+
+	function encodeIFrameForm(formData) {
+		var form = {};
+		var formNames;
+		try {
+			form.submitted = formData.form.submitted;			
+			form['name'] = formData.form.name;
+
+			var formUniqueName = "";
+			var action_value = "";
+			formUniqueName += formData.form.id + formData.form.name + formData.form.method + formData.form.class;
+			action_value = formData.form.action;
+			if(( action_value && action_value.length !== 0) && action_value.indexOf("?") > -1) {
+				action_value = action_value.substring(0,action_value.indexOf("?"));
+			}
+			formUniqueName += action_value;
+			form.uniqueName = md5(formUniqueName);
+			form.clientHashId = md5(formUniqueName + 'thirdpartyiframe');	
+			
+			var formInputList = [];
+			
+			for(var i = 0; i < formData.fields.length; i++) {
+				var formInput = {};
+				var field = formData.fields[i];
+				var generatedName = "";
+				generatedName += field.tagName + field.type + field.name + field.inputClass;
+				formInput.uniqueName = md5(generatedName);
+				
+				formInput['class'] = "FormInputState";
+				formInput.htmlID = field.htmlID;
+				formInput.type = field.type;
+				formInput.name = field.name;
+				formInput.inputClass=  field.inputClass;
+				formInput.value = field.value;
+				formInput.required = field.required;
+				formInput.buttonPressed = field.buttonPressed;
+				formInput.selected = field.selected;
+				formInput.checked = field.checked;
+				formInput.dynamic = field.dynamic;
+				
+				formInputList.push(formInput);
+			}
+
+			form.formInputList = formInputList;
+		}catch(e){
+			userSessionManager.log("ERROR", "encodeIFrameForm", e.toString());
+		}
+
+		return form;		
+	}
+	function getUpdatedFormsAsList() {
+		var updatedFormList = [];
+
+		for(var key in updatedForms) {
+			var form = updatedForms[key];
+
+			updatedFormList.push(form);
+		}
+
+		return updatedFormList;
+	}
+
+	function captureFormUpdate(formElement) {
+		var form = encodeForm(formElement);
+		updatedForms[form.clientHashId] = form;
+	}
+
+	function findNumbers(foundNumbers, rootElement) {
+		var trackingNumbers = [];
+		for(var key in foundNumbers) {
+			trackingNumbers.push(foundNumbers[key].trackingNumber);
+		}
+		for(var key in foundNumbers) {
+			var elements = Sizzle(foundNumbers[key].identifier, rootElement);
+			for(var i = 0; i < elements.length; i++) {
+				var foundNumber = elements[i].textContent.replace(/\D/g,"");
+				if(foundNumber.length == 10 
+					&& foundNumbers[key].phoneNumbers.indexOf('+1' + foundNumber) == -1
+					&& foundNumbers[key].deactivatedNumbers.indexOf('+1' + foundNumber) == -1
+					&& trackingNumbers.indexOf('+1' + foundNumber) == -1) {
+					foundNumbers[key].phoneNumbers.push('+1' + foundNumber);
+				}
+			}
+		}
+		return foundNumbers;
+	}
+
+	function stripLeadingPlusOne(numbers){
+		for(var tnKey in numbers) {
+			var tnObj = numbers[tnKey];
+			if(tnObj.trackingNumber) {
+				numbers[tnKey].trackingNumber = tnObj.trackingNumber.substring(2);
+			}
+			for(var i = 0; i < tnObj.phoneNumbers.length; i++) {
+				numbers[tnKey].phoneNumbers[i] = tnObj.phoneNumbers[i].substring(2);
+			}
+		}
+		return numbers;
+	}
+
+	function getNumberPositions(domNumbers, domBody) {
+		var numPositions = [];
+		var cPos = 0;
+		for(var i = 0; i < domNumbers.length; i++) {
+			var cNum = domNumbers.charAt(i);
+			var domPos = domBody.indexOf(cNum,cPos);
+			numPositions.push({number:parseInt(cNum),position:domPos});
+			cPos = domPos+1;
+		}
+		return numPositions;
+	}
+
+	function buildFoundNumbers(phoneNumbers, domNumbers, domBody, numPositions) {
+		var foundNumbers = [];
+		try {
+			for(var i = 0; i < phoneNumbers.length; i++) {
+				var phoneNumber = phoneNumbers[i],
+					cPos = 0,
+					numPos = domNumbers.indexOf(phoneNumber,cPos);
+
+				while(numPos != -1) {
+					var startPos = numPositions[numPos].position;
+					var endPos = numPositions[numPos+9].position+1;
+					foundNumbers.push({number:domBody.slice(startPos,endPos),key:i,original:phoneNumber});
+					cPos = numPos+1;
+					numPos = domNumbers.indexOf(phoneNumber,cPos);
+				}
+			}
+		} catch(e) {
+			if(!_reportedSwapError.buildfound) {
+				_reportedSwapError.buildfound = true;
+				userSessionManager.log("ERROR", "buildFoundNumbers", e.toString()); 
+			}
+		}
+		return foundNumbers;
+	}
+
+	function recurseChildren(el,num) {
+		var elObj = el,
+			children = elObj.childNodes;
+		for(var i = 0; i < children.length; i++) {
+			if(children[i].innerHTML && children[i].innerHTML.indexOf(num) !== -1) {
+				elObj = recurseChildren(children[i],num);
+			}
+		}
+		return elObj;
+	}
+
+	function findNumberLeaf(findNumber, rootElement, skippedElements) {
+		var elObj = null;		
+		try {
+			var elementlist = Sizzle("*:not(script)", rootElement);
+			if(elementlist.length > 0){
+				for(var i = 0; i < elementlist.length; i++) {
+					var element = elementlist[i],
+						href = element.getAttribute('href');
+					if(element.innerHTML && element.innerHTML.indexOf(findNumber) !== -1) {
+						elObj = recurseChildren(element,findNumber);
+						if(skippedElements.indexOf(elObj) == -1){
+							break;
+						} 
+					}else if(href && href.indexOf(findNumber) !== -1) {
+						elObj = element.parentNode;
+					}
+				}
+			}else if(rootElement.tagName && rootElement.tagName.toUpperCase() !== 'SCRIPT' 
+						&& rootElement.innerHTML && rootElement.innerHTML.indexOf(findNumber) !== -1) {
+				elObj = rootElement;
+			}else if(typeof rootElement.nodeValue !== 'undefined'  && rootElement.nodeValue.indexOf(findNumber) !== -1) {
+				elObj = rootElement
+			}
+		} catch(e) {
+			if(!_reportedSwapError.discover) {
+				_reportedSwapError.discover = true;
+				userSessionManager.log("ERROR", "findNumberLeaf", e.toString()); 
+			}
+		}
+		return elObj;
+	}
+
+	function isBlacklisted(elObj, foundNumber) {
+		var blacklistedSelectorsString = "'script'";
+		var blacklistedSelectors = blacklistedSelectorsString ? blacklistedSelectorsString.replace(/[']/g, "").split(',') : [];
+		var blacklisted = false;
+
+		try {
+			if(typeof elObj.innerHTML !== 'undefined') {
+				for(var i = 0; i < blacklistedSelectors.length; i++) {
+					var sel = blacklistedSelectors[i];
+					if ( (elObj.tagName && elObj.tagName.toUpperCase() === sel.toUpperCase()) 
+							|| (sel.toUpperCase() !== 'SCRIPT' && Sizzle(sel, elObj).length > 0) 
+							|| elObj.matches(sel) ) {
+						blacklisted = true;
+					}
+				}
+				if(frameworkID === "1" && Sizzle('[data-click-to-call-phone]', elObj).length > 0){
+					var iDctc = elObj.innerHTML.indexOf(foundNumber),
+						dctc = elObj.innerHTML.substring(iDctc-26, iDctc-2),
+						dctc2 = elObj.innerHTML.substring(iDctc-27, iDctc-3);
+					if(dctc === "data-click-to-call-phone" || dctc2 === "data-click-to-call-phone"){
+						blacklisted = true;
+					}
+				}
+			}
+		} catch(e) {
+			if(!_reportedSwapError.blacklist) {
+				_reportedSwapError.blacklist = true;
+				userSessionManager.log("ERROR", "isBlacklisted", e.toString()); 
+			}
+		}
+		return blacklisted;
+	}
+
+	function formatTrackingNumber(foundNumber, trackingNumber) {
+		var formattedNumber = "";
+		var numPos = 0;
+		for(var i = 0; i < foundNumber.length; i++) {
+			if(isNaN(foundNumber.charAt(i)) || foundNumber.charAt(i) == " " || foundNumber.charAt(i) == "\n") {
+				formattedNumber += foundNumber.charAt(i);
+			}else{
+				formattedNumber += trackingNumber.charAt(numPos);
+				numPos++;
+			}
+		}
+		return formattedNumber;
+	}
+
+	function swapNumbers(numbersObj, rootElement) {
+		
+		var publishedNumbers = [];
+		var skippedElements = [];
+		var cloned = [];
+		var domNumbers = "";
+		var domBody = "";
+		try {
+			numbersObj = stripLeadingPlusOne(numbersObj);
+
+			if(!rootElement) {
+				return [];
+			} else if(typeof rootElement.innerHTML !== 'undefined') {
+				domBody = rootElement.innerHTML;
+			} else if(typeof rootElement.nodeValue !== 'undefined') {
+				domBody = rootElement.nodeValue;
+			}
+
+			if(domBody && typeof domBody === 'string'){
+				domNumbers = domBody.replace(/\D/g,"");
+			}
+			if(domNumbers.length < 10) {
+				return [];
+			}
+
+			var numArr = getNumberPositions(domNumbers, domBody);
+
+			for(var tnKey in numbersObj) {
+				var tnObj = numbersObj[tnKey],
+					pnObj = {
+						tnKey: tnKey,
+						id: tnObj.id,
+						poolId: tnObj.poolId,
+						pubTrackNumId: tnObj.pubTrackNumId,
+						confirmed: 0,
+						needTracking: 0,
+						an: []
+					};
+					
+				if(tnObj.trackingNumber) {
+					pnObj.tn = "+1"+tnObj.trackingNumber;
+				}
+			
+				var foundArr = buildFoundNumbers(tnObj.phoneNumbers, domNumbers, domBody, numArr);
+
+				for(var i = 0; i < foundArr.length; i++) {
+					var val = foundArr[i],
+						elObj = findNumberLeaf(val.number, rootElement, skippedElements);
+
+					if(elObj) {
+						var blacklisted = isBlacklisted(elObj, val.number);
+
+						try {
+							if(blacklisted) {
+								skippedElements.push(elObj);
+							} else {
+								if(!tnObj.trackingNumber) {
+									pnObj.needTracking = 1;
+								} else {
+									var trackingNumber = formatTrackingNumber(val.number, tnObj.trackingNumber);
+									var elObjHTML = null;
+									if(typeof rootElement.innerHTML !== 'undefined') {
+										elObjHTML = elObj.innerHTML;
+									} else if(typeof rootElement.nodeValue !== 'undefined') {
+										elObjHTML = elObj.nodeValue;
+									}
+									
+									if(typeof elObjHTML === 'string') {
+										if(typeof elObj.innerHTML !== 'undefined') {
+											if(cloneSelectors === '' || !elObj.matches(cloneSelectors)) {
+												elObj.innerHTML = elObjHTML.replace(foundArr[i].number,trackingNumber);
+											} else {
+												if(!elObj.getAttribute("data-feclone")) {
+													var clone = elObj.cloneNode(true);
+													clone.setAttribute("data-feclone", "true");
+													cloned.push(clone);
+													elObj.innerHTML = elObjHTML.replace(foundArr[i].number,trackingNumber);
+												}
+											}
+										} else {
+											elObj.nodeValue = elObj.nodeValue.replace(foundArr[i].number,trackingNumber);
+										}
+										var sbFound = false;
+										swapback = {};
+										swapback.elObj = elObj;
+										swapback.originalNumber = foundArr[i].number;
+										swapback.trackingNumber = trackingNumber;
+
+										for(var x=0; x<_adpSwapbacks.length; x++){
+											if(_adpSwapbacks[x].elObj === elObj) {
+												sbFound = true;
+												_adpSwapbacks[x].originalNumber = swapback.originalNumber;
+											}
+										}
+										if(!sbFound && _adpSwapbacks.length < MAX_SWAPS) {
+											_adpSwapbacks.push(swapback);
+										}
+										pnObj.confirmed = 1;
+									}
+								}
+								if(pnObj.an.indexOf("+1" + foundArr[i].original) == -1) {
+									pnObj.an.push("+1" + foundArr[i].original);
+								}
+							}
+						} catch(e) {
+							if(!_reportedSwapError.swap) {
+								_reportedSwapError.swap = true;
+								userSessionManager.log("ERROR", "swapNumbers - perform swap", e.toString());
+							}
+						}
+					}
+				}
+
+				publishedNumbers.push(pnObj);
+			}
+
+			if(Sizzle('#fe-hidden-container').length === 0){
+				var feHiddenClones = document.createElement("div");
+				feHiddenClones.setAttribute("style", "display:none;");
+				feHiddenClones.setAttribute("id","fe-hidden-container");
+				Sizzle('body')[0].appendChild(feHiddenClones);
+			}
+
+			var feContainer = Sizzle('#fe-hidden-container')[0];
+
+			for(var i = 0; i < cloned.length; i++) {
+				feContainer.appendChild(cloned[i]);
+			}
+		} catch(e) {
+			if(!_reportedSwapError.main) {
+				_reportedSwapError.main = true;
+				userSessionManager.log("ERROR", "swapNumbers - main", e.toString()); 
+			}
+		}
+		return publishedNumbers;
+	}
+
+	function processNumbers(element) {
+		var trackingNumbers = JSON.parse(trackingNumbersJSON);
+		if(typeof trackingNumbers.Sales !== 'undefined' && !trackingNumbers.Sales.identifier) {
+			trackingNumbers.Sales.identifier = salesIdentifier;
+		}
+		if(typeof trackingNumbers.Service !== 'undefined' && !trackingNumbers.Service.identifier) {
+			trackingNumbers.Service.identifier = serviceIdentifier;
+		}
+		trackingNumbers = findNumbers(trackingNumbers, element);
+		var swap = swapNumbers(trackingNumbers, element);
+		return swap;
+	}
+
+    function phoneSwap(dynamic, phoneElements) {
+        var pubNums = [];
+		for(var j = 0; j < phoneElements.length; j++) {
+			var phoneElement = phoneElements[j],
+				result = processNumbers(phoneElement);
+			for(var x=0; x<result.length; x++){
+				result[x].dynamicSwap = dynamic;
+				var contains = false;
+				for(var i=0; i<pubNums.length; i++) {
+					if( result[x].tnKey === pubNums[i].tnKey ) {
+						contains = true;
+						if(result[x].confirmed) {
+							pubNums[i].confirmed = result[x].confirmed;
+						}
+						if(result[x].needTracking) {
+							pubNums[i].needTracking = result[x].needTracking;
+						}
+						for(var y=0; y<result[x].an.length; y++){
+							if(pubNums[i].an.indexOf(result[x].an[y]) == -1){
+								pubNums[i].an.push(result[x].an[y]);
+							}
+						}
+					}
+				}
+				if(!contains) { pubNums.push(result[x]); } 
+                if(dynamic) {
+                    swapcount += result[x].an.length;
+                    if(swapcount >= MAX_SWAPS) {
+                        console.log("max fe number swaps reached");
+                    }    
+                }				
+			}
+		}
+		userSessionManager.init(pubNums);
+	}
+
+	function reprocessNewTrackingNumber(encodedData){
+		var newTrackingNumberJSON = encodedData;
+		var newTn = JSON.parse(newTrackingNumberJSON);
+		var existingTn = JSON.parse(trackingNumbersJSON);
+		for(var k in newTn) {
+			existingTn[k] = newTn[k];
+		}
+		trackingNumbersJSON = JSON.stringify(existingTn);
+        var phoneElements = Sizzle(phoneSwapSelectors);
+        phoneSwap(true, phoneElements);
+	}
+
+	userSessionManager.init = function(pubNums) {
+		var trackingPhoneNumberList = [];
+		var requestPhonePoolList = [];
+
+		for (i = 0; i < pubNums.length; ++i) {
+			var trackingPhoneNumber = {};
+			trackingPhoneNumber.phonePool = {};
+			trackingPhoneNumber.phonePool.id = pubNums[i].poolId;
+			trackingPhoneNumber.phonePool.label = pubNums[i].tnKey;
+			trackingPhoneNumber.clientPhoneNumberList = [];
+			trackingPhoneNumber.dynamicSwap = pubNums[i].dynamicSwap;
+				
+			if(pubNums[i].confirmed == 1) {
+				trackingPhoneNumber.id = pubNums[i].id;
+				trackingPhoneNumber.publishedTrackingNumberId = pubNums[i].pubTrackNumId;
+				trackingPhoneNumber.value = pubNums[i].tn;
+				
+				var newAccountNumbersFound = false;
+					
+				for(j = 0; j < pubNums[i].an.length; j++) {
+					var accountPhoneNumber = {};
+					accountPhoneNumber.value = pubNums[i].an[j];
+					var poolAndNumber = trackingPhoneNumber.phonePool.id + "|" + accountPhoneNumber.value;
+					if(_alreadyPublished.indexOf(poolAndNumber) === -1){
+						_alreadyPublished.push(poolAndNumber);
+						trackingPhoneNumber.clientPhoneNumberList.push(accountPhoneNumber);
+						adp_console_out += trackingPhoneNumber.phonePool.label + ": " + accountPhoneNumber.value + " -> FE " + trackingPhoneNumber.value + "\n";
+						newAccountNumbersFound = true;
+					}
+				}
+				if(newAccountNumbersFound) {
+					trackingPhoneNumberList.push(trackingPhoneNumber);
+				}
+			} else if(pubNums[i].needTracking) {
+				if(_alreadyRequested.indexOf(pubNums[i].tnKey) === -1){
+					_alreadyRequested.push(pubNums[i].tnKey);
+					requestPhonePoolList.push(pubNums[i].poolId);
+					adp_console_out += pubNums[i].tnKey + ": (requesting tracking number)\n";
+				}
+				if(!pubNums[i].dynamicSwap){
+					for(j = 0; j < pubNums[i].an.length; j++) {
+						var accountPhoneNumber = {};
+						accountPhoneNumber.value = pubNums[i].an[j];
+						trackingPhoneNumber.clientPhoneNumberList.push(accountPhoneNumber);
+					}
+					trackingPhoneNumberList.push(trackingPhoneNumber);
+				}
+			}
+		}
+
+		if(trackingPhoneNumberList.length > 0) {
+			ajaxGenericCommand({
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID },
+				publishedTrackingNumberList: trackingPhoneNumberList
+			}, "initcommand");
+		}
+		if(requestPhonePoolList.length) {
+			userSessionManager.getTrackingNumber(requestPhonePoolList);
+		}
+	};
+	userSessionManager.status = function() {
+		var currentLastActiveTime = lastActiveTime,
+			currentActiveTime = activeTime;
+
+		activeTime = 0;
+		totalActiveTime += currentActiveTime;
+
+		ajaxGenericCommand({
+			externalSessionID: externalSessionID,
+			pageVisit: {
+				id: pageVisitID,
+				lastActiveTime: new Date(currentLastActiveTime),
+				totalActiveTime: totalActiveTime
+			},
+			activeTime: currentActiveTime
+		}, 'statuscommand');
+	};
+	userSessionManager.VDP = function(values) { 
+		_vdpProcessed = true;
+
+		ajaxGenericCommand({
+			externalSessionID: externalSessionID,
+			pageVisit: { id: pageVisitID },
+			processVDP: {
+				year: values[0],
+				make: values[1],
+				model: values[2],
+				image: values[3],
+				stockNumber: values[4],
+				condition: values[5],
+				trim: values[6],
+				vin: values[7],
+				color: values[8],
+				externalVehicleId: values[9],
+				msrp: values[10],
+				currentPrice: values[11],
+				externalLocationId: values[12],
+				vehicleClass: values[13],
+				mileage: values[14],
+				category: values[15],
+				city: values[16],
+				state: values[17]
+			}
+		}, "vdpcommand");
+	};
+	userSessionManager.chatLog = function(values) {
+		ajaxGenericCommand({
+			externalSessionID: externalSessionID,
+			pageVisit: { id: pageVisitID },
+			chatLog: {
+				name: values[0],
+				message: values[1],
+				chatTypeId: values[2],
+				chatTime: values[3]
+			}
+		}, "chatlogcommand");
+	};
+	userSessionManager.gUserTrack = function() {
+		if(gtID){
+			var data = {
+				gtID: gtID,
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID }
+			};
+
+			ajaxGenericCommand(data, "gusertrackcommand", function(response) {
+				if(response.message == "GUTCResponse"){
+					if(response.status == "OK" && (response.data != null)) {
+						if(typeof(window.sessionStorage) !== 'undefined') {
+							window.sessionStorage.setItem('adp_gtid_reported', Date.now());
+						}
+						xdLocalStorage.setItem(gt_id_name, response.data.globalTrackingId, function (data) {
+							if(data.success) {
+								localStorage.setItem(gt_id_name, response.data.globalTrackingId);
+							}
+						});								
+					}
+				}
+			});
+		}
+	};
+	userSessionManager.log = function(type, tag, msg) {
+		if(logcount < MAX_ERRORS){
+			if(_clog) {
+				console.log(type + ": " + tag + ": " + msg);
+			}
+
+			ajaxGenericCommand({
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID },
+				tag: tag,
+				message: msg,
+				type: type
+			}, "logcommand");
+
+			logcount++;
+		}
+	};
+	userSessionManager.sendEvent = function(type, ed) {
+		if(type && externalSessionID && pageEventCount < MAX_PAGE_EVENTS){
+			pageEventCount++;
+			var eventDataList = [];
+
+			for(var i in ed) {
+				var v = ed[i];
+				if(v.eventKey && v.hasOwnProperty('eventValue')) {
+					eventDataList.push({
+						key: v.eventKey,
+						value: v.eventValue
+					});
+				}
+			}
+
+			ajaxGenericCommand({
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID },
+				event: {
+					eventType: { name: type },
+					eventDataList: eventDataList
+				}
+			}, "eventcommand");
+		}
+	};
+	userSessionManager.sendExtId = function(type, extId) {
+		if(type && externalSessionID && extId && extId.trim() !== ""){
+			var data = {
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID },
+				type: { id: type },
+				externalTrackingId: extId
+			};
+
+			ajaxGenericCommand(data, "externalidcommand", function(response) {
+				if(response && response.message == "ETIDResponse" && response.status == "OK" && typeof(window.sessionStorage) != 'undefined'){
+					window.sessionStorage.setItem('adp_etid_found', true);
+				}
+			});
+		}
+	};
+	userSessionManager.getTrackingNumber = function(phonePoolList) {
+		if(externalSessionID){
+			var data = {
+				externalSessionID: externalSessionID,
+				pageVisit: { id: pageVisitID },
+				phonePoolList: phonePoolList
+			};
+
+			ajaxGenericCommand(data, "gettrackingnumbercommand", function(response) {
+				if(response.status == "OK") {
+					reprocessNewTrackingNumber(response.data.encodedTrackingNumbers);
+				}
+			});
+		}
+	};
+	userSessionManager.endPageView = function() {
+		var currentLastActiveTime = lastActiveTime,
+			currentActiveTime = activeTime,
+			formStateList = getUpdatedFormsAsList();
+
+		activeTime = 0;
+		totalActiveTime += currentActiveTime;
+		lastUnloadEvent = Date.now();
+		
+		var data = {
+			externalSessionID: externalSessionID,
+			formStateList: formStateList,
+			pageVisit: {
+				id: pageVisitID,
+				lastActiveTime: new Date(currentLastActiveTime),
+				totalActiveTime: totalActiveTime
+			},
+			activeTime: currentActiveTime
+		};
+		if(!navigator.sendBeacon) {
+			ajaxGenericSynchronousCommand(data, 'endpageviewcommand', function(response) {
+				if(response.status == 'OK') {
+					updatedForms = {};
+				}
+			});
+		} else {
+			dispatchBeacon(data, 'endpageviewbeacon');
+			updatedForms = {};
+		}
+	};
+
+	var swapcount = 0;
+	var _observers = [];
+	var observeDOM = (function() {
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+		return function(obj, callback){
+			if( MutationObserver ){
+				var observer = new MutationObserver(function(mutations){
+					if(mutations) {
+							for(var i=0; i<mutations.length; i++) {
+								var mutation = mutations[i];
+								var domChanges = [];
+								if(mutation.type === 'childList' && mutation.addedNodes && mutation.addedNodes.length > 0) {
+									domChanges = mutation.addedNodes;
+								}else if( (mutation.type === 'characterData') || (mutation.type === 'attributes' && mutation.attributeName === 'href') ) { 
+									domChanges.push(mutation.target.parentNode);
+								}
+								if(domChanges.length){
+                                    callback(domChanges, mutation.type);
+								}
+							}
+					}
+				});
+				try{
+					observer.observe( obj, { childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['href'] });
+					_observers.push(observer);
+				}catch(e){
+					userSessionManager.log("ERROR", "observeDOM", e.toString());
+				}
+			}
+		} 
+	})();
+
+	function myReplaceAll(string, find, replace) {
+		return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+	}
+	function escapeRegExp(str) {
+		return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\\$\|]/g, "\\\$&");
+	}
+
+	//-----------------------------------------
+
+
+	var adp_client_name = "Ourisman Chantilly Kia";
+
+
+	//-------------------------------------------
+
+	var isActive = true;
+	var previousLastActiveTime = lastActiveTime;
+	var isExpired = false;
+	var statusIntervalInMs = 30000; // 30 seconds
+	var idleThresholdInMs = 90000; // 90 seconds
+	var userSessionExpirationThresholdInMs = 1800000; // 30 minutes
+	var statusIntervalId = null;
+	var hiddenAttribute;
+	var visibilityChangeEvent;
+
+	function setStatusInterval() {
+		statusIntervalId = window.setInterval(monitorStatus, statusIntervalInMs);
+	}
+
+	function resetStatusInterval() {
+		window.clearInterval(statusIntervalId);
+		setStatusInterval();
+	}
+
+	function suspendStatusInterval() {
+		window.clearInterval(statusIntervalId);
+
+		statusIntervalId = null;
+	}
+
+	function isUserInactive() {
+		return Date.now() - lastActiveTime > idleThresholdInMs;
+	}
+
+	function setIsActive(active) {
+		isActive = active;
+	}
+
+	function monitorStatus() {
+		if(isUserInactive()) {
+			suspendStatusInterval();
+			setIsActive(false);
+		} else if(activeTime > 0) {
+			userSessionManager.status();
+		}
+	}
+
+	function makeActive() {
+		if(!isActive) {
+			setIsActive(true);
+			
+			if(!statusIntervalId) {
+				setStatusInterval();
+			}
+		}
+	}
+
+	function isUserSessionExpired() {
+		return Date.now() - lastActiveTime > userSessionExpirationThresholdInMs;
+	}
+
+	function swapBackNumbers(){
+		var find, rplc, str;
+		try {
+			for(var i=0; i<_observers.length; i++){
+				_observers[i].disconnect();
+			}
+			for(var i=0; i<_adpSwapbacks.length; i++){
+				var sb = _adpSwapbacks[i];
+				if(typeof sb !== 'undefined'){
+					find = sb.trackingNumber;
+					rplc = sb.originalNumber;
+					if(typeof sb.elObj.innerHTML !== 'undefined') {
+						str = sb.elObj.innerHTML;
+						str = myReplaceAll(str, find, rplc);
+						sb.elObj.innerHTML = str;
+					} else if(typeof sb.elObj.nodeValue !== 'undefined') {
+						str = sb.elObj.nodeValue;
+						str = myReplaceAll(str, find, rplc);
+						sb.elObj.nodeValue = str;
+					}
+				}
+			}
+		}catch(e){
+			userSessionManager.log("ERROR", "swapBackNumbers", e.toString());
+		}
+	}
+
+	function expireUserSession() {
+		swapBackNumbers();
+		userSessionManager.endPageView();
+
+		isExpired = true;
+	}
+
+	function updateLastActiveData() {
+		if(!isExpired && isUserSessionExpired()) {
+			expireUserSession();
+
+			lastActiveTime = Date.now();
+			previousLastActiveTime = lastActiveTime;
+		} else {
+			lastActiveTime = Date.now();
+
+			if(isActive) {
+				activeTime += (lastActiveTime - previousLastActiveTime);
+			}
+
+			previousLastActiveTime = lastActiveTime;
+		}
+	}
+
+	function processEventAndMakeActive() {
+		updateLastActiveData();
+		makeActive();
+	}
+
+	function processEventAndMakeInactive() {
+		updateLastActiveData();
+		setIsActive(false);
+	}
+
+	function determineForm(target) {
+		var formElement;
+		if(target.getAttribute('form')) {
+			var formID = target.getAttribute('form');
+			formElement = Sizzle('form#' + formID);
+		} else {
+			formElement = target.closest("form");
+		}
+		if(!formElement && formlessFormSelectors.length > 0) {
+			for(var i = 0; i < formlessFormSelectors.length; i++) {
+				formElement = target.closest(formlessFormSelectors[i]);
+				if(formElement) {
+					break;
+				}
+			}
+		}
+		return formElement;
+	}
+
+	function processInputEvent(event) {
+		updateLastActiveData();
+
+		if(typeof event.target != 'undefined') {
+			var formElement = determineForm(event.target);
+			if(formElement) {
+				setDataAttribute(formElement, "submitted", false);
+				setDataAttribute(formElement, "adp-changed", true);
+				if(event.target.type === 'checkbox' || event.target.type === 'radio') {
+					setDataAttribute(event.target, "checked", event.target.checked);
+				}
+				recentSubmission = false;
+				captureFormUpdate(formElement);
+			} else if(!reportedUntrackedForm) {
+				reportedUntrackedForm = true;
+				userSessionManager.log('WARN', 
+					'processInputEvent', 
+					'Could not find parent "form" element. Target: [frameworkId=' + frameworkID + ', tag=' + event.target.tagName + ', id=' + event.target.id + ', name=' + event.target.name + ', type=' + event.target.type + ']');
+			}
+		}
+	}
+
+	function processSelectEvent(event) {
+		updateLastActiveData();
+
+		if(typeof event.target != 'undefined') {
+			setDataAttribute(event.target, "selected", true);
+			var formElement = determineForm(event.target);
+			if(formElement) {
+				setDataAttribute(formElement, "submitted", false);
+				setDataAttribute(formElement, "adp-changed", true);
+				recentSubmission = false;
+				captureFormUpdate(formElement);
+			} else if(!reportedUntrackedForm) {
+				reportedUntrackedForm = true;
+				userSessionManager.log('WARN', 
+					'processSelectEvent', 
+					'Could not find parent "form" element. Target: [frameworkId=' + frameworkID + ', tag=' + event.target.tagName + ', id=' + event.target.id + ', name=' + event.target.name + ']');
+			}
+		}
+	}
+
+	function processSubmitEvent(event) {
+		updateLastActiveData();
+
+		if(typeof event.target != 'undefined') {
+			var formElement = determineForm(event.target);
+			if(formElement) {
+				setDataAttribute(formElement, "submitted", true);
+				recentSubmission = true;
+				captureFormUpdate(formElement);
+			} else if(!reportedUntrackedForm) {
+				reportedUntrackedForm = true;
+				userSessionManager.log('WARN', 
+					'processSubmitEvent', 
+					'Could not find parent "form" element. Target: [frameworkId=' + frameworkID + ', tag=' + event.target.tagName + ', id=' + event.target.id + ', name=' + event.target.name + ']');
+			}
+		}
+	}
+
+	function processButtonEvent(event) {
+		updateLastActiveData();
+
+		try {
+			if(typeof event.target != 'undefined') {
+				var formElement = determineForm(event.target);
+				if(formElement) {
+					setDataAttribute(formElement, "adp-changed", true);
+					setDataAttribute(event.target, "buttonPressed", true);
+
+					if(event.target.type.toLowerCase().indexOf("submit") >= 0 
+						|| event.target.name.toLowerCase().indexOf("submit") >= 0 
+						|| event.target.title.toLowerCase().indexOf("submit") >= 0 
+						|| event.target.id.toLowerCase().indexOf("submit") >= 0
+						|| event.target.classList.value.toLowerCase().indexOf("submit") >= 0) {
+						
+						setDataAttribute(formElement, "submitted", true);
+						recentSubmission = true;
+						captureFormUpdate(formElement);
+
+						if(typeof facebook_pixel_id != 'undefined' && facebook_pixel_id && typeof fbq != 'undefined') {
+							fbq('track', 'Lead', {content_name: 'Form Submission'});
+						}
+					}
+				}
+			}
+		} catch(e) {
+			//userSessionManager.log("ERROR", "processButtonEvent", e.toString());
+		}
+	}
+
+	function processHideEvent() {
+		processEventAndMakeInactive();
+		suspendStatusInterval();
+
+		if((Date.now() - lastUnloadEvent > statusIntervalInMs) || recentSubmission) {
+			userSessionManager.endPageView();
+		}
+	}
+
+	function processUnloadEvent() {
+		updateLastActiveData();
+		userSessionManager.endPageView();
+	}
+
+	function processChangeVisibilityEvent() {
+		if(document[hiddenAttribute]) {
+			processHideEvent();
+		} else {
+			processEventAndMakeActive();
+		}
+	}
+
+	function processChatLogEvent(values) {
+		if (values != undefined){
+			userSessionManager.chatLog(values);
+		}
+	}
+	
+	function iFrameAccess(iframe) {
+	    var iframeContent = null;
+	    try { 
+	      var doc = iframe.contentDocument || iframe.contentWindow.document;
+	      iframeContent = doc.body.innerHTML;
+	    } catch(err){}
+	    return (iframeContent !== null);
+	}
+	
+	function processCustomEvent(customEvent) {
+		if(customEvent && customEvent.type && customEvent.data) {
+			userSessionManager.sendEvent(customEvent.type, customEvent.data);
+		}
+	}
+	
+	function registerEventListeners() {
+		var bodyElement = document.getElementsByTagName('body')[0];
+
+		if(!disableFormTracking) {
+			bodyElement.addEventListener('change', function(e) {
+				if(!e.target) {
+					return;
+				}
+
+				if(e.target.nodeName == 'INPUT' || e.target.nodeName == 'TEXTAREA') {
+					processInputEvent(e);
+				} else if(e.target.nodeName == 'SELECT') {
+					processSelectEvent(e);
+				}
+			});
+			bodyElement.addEventListener('click', function(e) {
+				if(!e.target) {
+					return;
+				}
+
+				if(e.target.nodeName == 'BUTTON' 
+					|| e.target.role == 'button' 
+					|| hasClass(e.target, 'btn')
+					|| hasClass(e.target, 'button')) {
+					processButtonEvent(e);
+				}
+			});
+			bodyElement.addEventListener('submit', processSubmitEvent);
+		}
+
+		bodyElement.addEventListener('mousemove', processEventAndMakeActive);
+		bodyElement.addEventListener('touchstart', processEventAndMakeActive);
+		document.addEventListener('mouseenter', processEventAndMakeActive);
+		document.addEventListener('mouseleave', processEventAndMakeInactive);
+		window.addEventListener('scroll', processEventAndMakeActive);
+		window.addEventListener('beforeunload', processUnloadEvent);
+		window.addEventListener('pagehide', processHideEvent);
+
+		if(typeof document.hidden !== 'undefined') {
+			hiddenAttribute = 'hidden';
+			visibilityChangeEvent = 'visibilitychange';
+		} else if(typeof document.msHidden !== 'undefined') {
+			hiddenAttribute = 'msHidden';
+			visibilityChangeEvent = 'msvisibilitychange';
+		} else if(typeof document.webkitHidden !== 'undefined') {
+			hiddenAttribute = 'webkitHidden';
+			visibilityChangeEvent = 'webkitvisibilitychange';
+		}
+
+		document.addEventListener(visibilityChangeEvent, processChangeVisibilityEvent);
+	}
+
+	function processIframeForms(iframes) {
+		if(iframes.length > 0) {
+			iframes[0].addEventListener('load', function() {
+				var iframeDocument = iframes[0].contentDocument || iframes[0].contentWindow.document,
+					iframeForms = Sizzle('form', iframeDocument);
+
+				for(var i = 0; i < iframeForms.length; i++) {
+					var iframeFormElements = Sizzle('input, select, textarea, button', iframeForms[i]);
+
+					for(var j = 0; j < iframeFormElements.length; j++) {
+						setDataAttribute(iframeFormElements[j], 'type', 'static');
+					}
+
+					var iframeFormNames = generateFormNames(iframeForms[i]);
+					setDataAttribute(iframeForms[i], 'formNames', iframeFormNames);
+					iframeForms[i].addEventListener('submit', processSubmitEvent);
+				}
+			});
+		}
+	}
+
+	function processStaticForms() {
+		var forms = Sizzle('form');
+		for(var i = 0; i < forms.length; i++) {
+			var form = forms[i];
+			var formElements = Sizzle('input, select, textarea, button', form);
+
+			for(var j = 0; j < formElements.length; j++) {
+				setDataAttribute(formElements[j], 'type', 'static');
+			}
+
+			var formNames = generateFormNames(form);
+			setDataAttribute(forms[i], 'formNames', formNames);
+		}
+		var iframe = Sizzle('iframe[src^="' + window.location.protocol + '//' + window.location.host + '"]');
+		processIframeForms(iframe);
+	}
+
+	//third party iframe 
+	function processThirdPartyIFrames() {}
+	  var MESSAGE_NAMESPACE = 'fe-thirdparty-iframe';
+	  window.addEventListener('message', function(ev) {		  
+	    if(ev && ev.origin 
+	    	&& allowedIframeOrigins.indexOf(ev.origin) >= 0
+	    	&& ev.data
+	    	&& ev.data.namespace === MESSAGE_NAMESPACE) {
+
+	      var form = encodeIFrameForm(ev.data);
+
+		  updatedForms[form.clientHashId] = form;
+	    }
+	});
+	function processVDP() {}
+
+	var xdLocalStorage = (function () {
+		var MESSAGE_NAMESPACE = 'fe-xd-local-message';
+		var options = {
+			iframeId: 'fe-xd-store-iframe',
+			iframeUrl: undefined,
+			initCallback: function () {}
+		};
+		var requestId = -1;
+		var iframe;
+		var requests = {};
+		var wasInit = false;
+		var iframeReady = true;
+		function applyCallback(data) {
+			if (requests[data.id]) {
+				requests[data.id](data);
+				delete requests[data.id];
+			}
+		}
+		function extend(object, defaultObject) {
+			var result = defaultObject || {};
+			var key;
+			for (key in object) {
+				if (object.hasOwnProperty(key)) {
+					result[key] = object[key];
+				}
+			}
+			return result;
+		}
+		function receiveMessage(event) {
+			var data;
+			if(event.origin == 'https://' + fourEyesURL) {
+				try {
+					data = JSON.parse(event.data);
+				} catch (err) {
+					//not our message, can ignore
+				}
+				if (data && data.namespace === MESSAGE_NAMESPACE) {
+					if (data.id === 'iframe-ready') {
+						iframeReady = true;
+						options.initCallback();
+					} else {
+						applyCallback(data);
+					}
+				}
+			}
+		}
+		function buildMessage(action, key, value, callback) {
+			requestId++;
+			requests[requestId] = callback;
+			var data = {
+				namespace: MESSAGE_NAMESPACE,
+				id: requestId,
+				action: action,
+				key: key,
+				value: value
+			};
+			iframe.contentWindow.postMessage(JSON.stringify(data), 'https://' + fourEyesURL);
+		}
+		function init(customOptions) {
+			options = extend(customOptions, options);
+			var temp = document.createElement('div');
+
+			if (window.addEventListener) {
+				window.addEventListener('message', receiveMessage, false);
+			} else {
+				window.attachEvent('onmessage', receiveMessage);
+			}
+
+			temp.innerHTML = '<iframe id="' + options.iframeId + '" src=' + options.iframeUrl + ' style="display: none;"></iframe>';
+			document.body.appendChild(temp);
+			iframe = document.getElementById(options.iframeId);
+		}
+		function isApiReady() {
+			if (!wasInit) { return false; }
+			if (!iframeReady) { return false; }
+			return true;
+		}
+		function isDomReady() {
+			return (document.readyState === 'complete');
+		}
+		return {
+			//callback is optional for cases you use the api before window load.
+			init: function (customOptions) {
+				if (!customOptions.iframeUrl) {
+					throw 'You must specify iframeUrl';
+				}
+				if (wasInit) {
+					console.log('xdLocalStorage was already initialized!');
+					return;
+				}
+				wasInit = true;
+				if (isDomReady()) {
+					init(customOptions);
+				} else {
+					if (document.addEventListener) {
+						document.addEventListener('readystatechange', function () {
+							if (isDomReady()) { init(customOptions); }
+						});
+					} else {
+						document.attachEvent('readystatechange', function () {
+							if (isDomReady()) { init(customOptions); }
+						});
+					}
+				}
+			},
+			setItem: function (key, value, callback) {
+				if (!isApiReady()) {
+					return;
+				}
+				buildMessage('set', key, value, callback);
+			},
+			getItem: function (key, callback) {
+				if (!isApiReady()) {
+					return;
+				}
+				buildMessage('get', key, null, callback);
+			},
+			removeItem: function (key, callback) {
+				if (!isApiReady()) {
+					return;
+				}
+				buildMessage('remove', key, null, callback);
+			},
+			key: function (index, callback) {
+				if (!isApiReady()) {
+					return;
+				}
+				buildMessage('key', index, null, callback);
+			},
+			getSize: function(callback) {
+				if(!isApiReady()) {
+					return;
+				}
+				buildMessage('size', null, null, callback);
+			},
+			clear: function (callback) {
+				if (!isApiReady()) {
+					return;
+				}
+				buildMessage('clear', null, null, callback);
+			},
+			wasInit: function () {
+				return wasInit;
+			}
+		};
+	})();
+
+	function feInit() {
+		registerEventListeners();
+
+		var analyticsID = null,
+			analyticsIDMPOnly = null;
+
+		if( (analyticsID != null && analyticsID != "null" && analyticsID != "") || analyticsIDMPOnly != null) {
+			initGoogleAnalytics = function(UA) {
+				var _ga = document.createElement('script'); _ga.type = 'text/javascript'; _ga.async = true;
+				_ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.google-analytics.com/analytics.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ga, s);
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', UA, 'auto', {'name': 'adp'});
+
+				if(analyticsID != null) {
+					ga('adp.require', 'displayfeatures');
+					ga('adp.send', 'pageview');
+				}
+
+				ga(function() {
+					var tracker = ga.getByName('adp');
+					var clientId = tracker.get('clientId');
+					if(typeof(window.sessionStorage) === 'undefined' || (typeof(window.sessionStorage) !== 'undefined' && !window.sessionStorage.getItem('adp_gacid'))){
+						if(typeof(window.sessionStorage) !== 'undefined') {
+							window.sessionStorage.setItem('adp_gacid', 1);
+						}
+						userSessionManager.sendExtId('2', clientId);
+					}
+				});
+			}
+
+			if(analyticsID != null) {
+				initGoogleAnalytics(analyticsID);
+			} else {
+				initGoogleAnalytics(analyticsIDMPOnly);
+			}
+		}
+
+	    //init remarketing gtag/datalayer
+	    window.dataLayer = window.dataLayer || [];
+	    function gtag(){dataLayer.push(arguments);}
+	    gtag('js', new Date());
+	    gtag('config', 'AW-'+remarketingID);
+		
+		    
+		/*eslint no-undef: 0*/
+clientGenerateFormName = function(form, name, nameHash) {
+    try {
+        var dataTest = form.getAttribute('data-test');
+
+        if (hasClass(form, "test_drive_form")) {
+            nameHash = "253PgDGVfBhHuF9kT30ferhonQoQugPM";
+        } else if (hasClass(form, "make_offer_form")) {
+            nameHash = "0PfttGQ7Wtsd3vNj3FbJAgzaUx8dKBFb";
+        } else if (form.getAttribute("id") != undefined && form.getAttribute("id").indexOf("filter_form") > -1 && hasClass(form, "inventory")) {
+            nameHash = "U6TFAhlQChZFuIrzgBW7Ja7b4Y2iFcTt";
+        } else if(dataTest === "carcode-sms-submit-form") { 
+            nameHash = '20200805-carcode-text-us';
+        } else if (typeof(clientCustomGenerateFormName) === typeof(Function)) {
+            nameHash = clientCustomGenerateFormName(form, name, nameHash);
+        }
+    } catch (err) {
+        userSessionManager.log('ERROR', 'formNaming:default', err.toString());
+    }
+
+    return nameHash;
+}
+
+    var feInitClassName = 'fe-iframe-loader-1.0';
+    var fe_init_script_el = document.getElementsByClassName(feInitClassName);
+    if(fe_init_script_el.length === 0){
+        (function() {
+            var adp = document.createElement('script'); 
+            adp.type = 'text/javascript';
+            adp.className = feInitClassName;
+            adp.async = true;
+            adp.src = 'https://scripts.foureyes.io/iframe-loader.js';
+            var s = document.getElementsByTagName('script')[0]; 
+            s.parentNode.insertBefore(adp, s);
+        })();
+    } 
+//dont display policy
+var adp_privacy_policy = "";
+/* global fbq, facebook_pixel_id */
+/* Init FB */
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', facebook_pixel_id);
+fbq('track', 'PageView');/* global DDC */
+salesIdentifier = '.ddc-header .phone1, .hCPhone1, .header .phone1, .page-header .phone1, div.nav-call-numbers > div:nth-child(1)';
+serviceIdentifier = '.ddc-header .phone2, .hCPhone2, .header .phone2, .page-header .phone2';
+
+var confirmation_pages = ["/contact-form-confirm.htm", "/form/confirm.htm", "/confirm-parts.htm"];
+
+clientCustomGenerateFormName = function(form, name, nameHash) {
+
+    var formIdAttr = form.getAttribute("id");
+    var formActionAttr = form.getAttribute("action");
+    var dataAction = form.getAttribute("data-action");
+    var formName = form.getAttribute("name");
+    var formLegend = form.querySelector("legend");
+
+    if (formIdAttr == "compareForm" && formActionAttr != undefined && formActionAttr.indexOf("inventory/compare.htm") > -1) {
+        nameHash = "2LbvHI4OeE6VHTObFYRd18meqqAqzJ6K";
+    } else if (hasClass(form, "mycars-compare-form") && formActionAttr == "/all-inventory/compare.htm") {
+        nameHash = "2LbvHI4OeE6VHTObFYRd18meqqAqzJ6K";
+    } else if (formActionAttr != undefined && formActionAttr.indexOf("confirm.htm") > -1 && formActionAttr.indexOf("payment-calculator") > -1) {
+        nameHash = "jdyUxSEa5Xw1S5JqJ2Ei0ayXHbWqLjKu";
+    } else if (formActionAttr == "/all-inventory/index.htm" || formActionAttr == "/new-inventory/index.htm"
+                || formActionAttr == "/used-inventory/index.htm" || formActionAttr == "/certified-inventory/index.htm") {
+        nameHash = "xhMD4l38cmYybXJFRoLMCCvEyumtWJbZ";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf("maps.google.com") > -1 || formActionAttr.indexOf("/gmap.htm") > -1) ) {
+        nameHash = "eo1nxispxD7w4QiQ5DFW3EngfiJ5GO7w";
+    } else if (formActionAttr != undefined && formActionAttr.indexOf("employment") > -1) {
+        nameHash = "f508b5fb11afb0600a2c8d5339a68b6f";
+    }
+
+    /* Lead forms */
+    else if (formActionAttr != undefined && formActionAttr.indexOf("/SecureFinancingGateway") > -1 && formActionAttr.indexOf("finance-lead") > -1) {
+        nameHash = "63b0a737ebdecbe14c6b441e8b714983";
+    } else if (formActionAttr != undefined && formActionAttr.indexOf("/SecureFinancingGateway") > -1 && formActionAttr.indexOf("finance") > -1) {
+        nameHash = "3uaYSmHLbZzxAzPSXlPxc7CoLmUalS72";
+    } else if (formName != undefined && formName == "capture_form") {
+        nameHash = "LQk9RSxj7gEY1p67Nqb4cyiFVbnr2BLi";
+    } else if (hasClass(form, "mycars-form")) {
+        nameHash = "WDBKlxu56nG3qImEY7WIpXduWwA0xUfw";
+    } else if (hasClass(form, "register-form")) {
+        nameHash = "yH6e6m5jCxCFF5PWssaMzuqyi1bvyffl";
+    } else if (hasClass(form, "login-form")) {
+        nameHash = "WDBKlxu56nG3qImEY7WIpXduWwA0xUfw";
+    } else if (dataAction === "lead_capture") {
+        nameHash = "20181106dealercom-leadcapture";
+    } else if (formIdAttr == "finance-driver-application" || (formActionAttr != undefined && formActionAttr.indexOf("financing") > -1) ) {
+        nameHash = "20200618dealercom-finance-app";
+    } else if (formLegend && formLegend.textContent && formLegend.textContent.indexOf("e-price") > -1) {
+        nameHash = "20210225dealercom-getprice";
+    }
+
+    /* Confirmation pageview variants */
+    else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("navbar") > -1) {
+        nameHash = "f00b1491996e9ea59f2bb722bcca6aa6";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("SITEBUILDER") > -1) {
+        nameHash = "fa21621237173400fc321baa00f42156";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && (formActionAttr.indexOf("tradein") > -1 || formActionAttr.indexOf("trade_in") > -1)) {
+        nameHash = "7bac7491e2f121e358cdb17ac1e548c7";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1 || formActionAttr.indexOf("sales.htm")) && (formActionAttr.indexOf("inventory_lead") > -1 || formActionAttr.indexOf("inventory-lead-eprice") > -1)) {
+        nameHash = "d5aa1729c8c253e5d917a5264855eab8";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && (formActionAttr.indexOf("inventory_lead") > -1 || formActionAttr.indexOf("inventory-lead") > -1)) {
+        nameHash = "01fc00b418b1272177c915c29be10e03";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && (formActionAttr.indexOf("SPECIALS_LISTING_USED") > -1 || formActionAttr.indexOf("SPECIALS_LISTING_NEW") > -1 || formActionAttr.indexOf("SPECIALS_LISTING_FINANCE") > -1)) {
+        nameHash = "92f2cec17c717f116252f7961b21af7b";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("SPECIALS_LISTING") > -1) {
+        nameHash = "406926a62241d5ecd6d984588cb5b002";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("service_lead") > -1) {
+        nameHash = "a6fdda4c1e0f5f69b2dc44bf5b5dd9f1";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("SERVICE_LEAD") > -1) {
+        nameHash = "75070b7f9ec8646b6b49ffcfa3eabcb7";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("parts_lead") > -1) {
+        nameHash = "525deb4322d40c006ef080dd61a561a8";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("incentives-lead") > -1) {
+        nameHash = "W88jH2AzDVHnOiVNi71PJIufjsywqWR6";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("SHOWROOM") > -1) {
+        nameHash = "6e8c9db5a10304b28d840012a7abb48c";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("/promotions") > -1) {   // EXPL: Action for Claim Offer
+        nameHash = "20181116dealercom-promotions";
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("inventory-finder-lead") > -1) {   // EXPL: Action for Car Finder
+        nameHash = "20181116dealercom-inventoryfinderlead";   
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1) && formActionAttr.indexOf("SHARE_VEHICLE_FORM") > -1) {
+        nameHash = "20200819-dealercom-share-vehicle";        
+    } else if (formActionAttr != undefined && (formActionAttr.indexOf(confirmation_pages[0]) > -1 || formActionAttr.indexOf(confirmation_pages[1]) > -1)) {
+        nameHash = "OwOziODATToAYrfAVjUw94hGgkyOPWx7";
+    }
+
+    return nameHash;
+}
+
+clientGenerateFormInputName = function(formInput, name, nameHash) {
+    return nameHash;
+}
+
+processVDP = function() {
+
+    var url = window.location.href;
+    var year = null,
+        make = null,
+        model = null,
+        image = null,
+        stockNumber = null,
+        trim = null,
+        condition = null,
+        vin = null,
+        color = null,
+        msrp = null, 
+        externalVehicleId = null,
+        currentPrice = null;
+    if (DDC.dataLayer.page.pageInfo.isVdp) {
+        try {
+            
+            
+            year = DDC.dataLayer.vehicles[0].modelYear;
+            make = DDC.dataLayer.vehicles[0].make;
+            model = DDC.dataLayer.vehicles[0].model;
+            
+            var img = Sizzle(".imageViewer img");
+            var imgB = Sizzle('.jcarousel-item-1-horizontal');
+            var imgC = Sizzle('.slider-list img');
+            var divImg = Sizzle('.slider-list > div.single-slide');
+            if (img.length) {
+                image = img[0].src;
+            } else if (imgB.length) {
+                image = imgB[0].src;
+            } else if (imgC.length) { 
+                image = imgC[0].src;
+            } else if (divImg.length) {
+                image = divImg[0].getAttribute('style').split(' ')[1].split('"')[1];
+            }
+            
+            stockNumber = DDC.dataLayer.vehicles[0].stockNumber;
+            if (DDC.dataLayer.vehicles[0] && DDC.dataLayer.vehicles[0].inventoryType) {
+                condition = DDC.dataLayer.vehicles[0].inventoryType;
+            } else if (url.indexOf("used") !== -1) {
+                condition = "Used";
+            } else {
+                condition = "New";
+            }
+            trim = DDC.dataLayer.vehicles[0].trim;
+            vin = DDC.dataLayer.vehicles[0].vin;
+            color = DDC.dataLayer.vehicles[0].exteriorColor;
+            externalVehicleId = DDC.dataLayer.vehicles[0].uuid;
+
+            var msrpStr = DDC.dataLayer.vehicles[0].msrp.replace(/[^0-9.]/g, '');
+            msrp = parseInt(msrpStr) ? parseInt(msrpStr) : null;  
+
+            var currentPriceStr = DDC.dataLayer.vehicles[0].internetPrice.replace(/[^0-9.]/g, '');
+            currentPrice = parseInt(currentPriceStr) ? parseInt(currentPriceStr) : null;
+
+            if(typeof facebook_pixel_id !== 'undefined' && facebook_pixel_id && typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {content_type: 'product'});
+            }
+            
+            return [year, make, model, image, stockNumber, condition, trim, vin, color, externalVehicleId, msrp, currentPrice];
+        } catch (err) {
+            userSessionManager.log("ERROR", "processVDP:DDC", err.toString());
+        }
+
+    } else {
+        try {
+            if ((url.indexOf("/privacy") > -1) || (url.indexOf("/disclaimer") > -1)) {
+                var pp = Sizzle('.privacyPolicy');
+                var ppc = Sizzle('[data-widget-id="content1"]');
+                var ppcc = Sizzle('.page-bd .ddc-span8');
+
+                if (pp.length) {
+                    pp[0].innerHTML += adp_privacy_policy;
+                } else if (ppc.length) {
+                    ppc[0].innerHTML += adp_privacy_policy;
+                } else if (ppcc)  {
+                    ppcc[0].innerHTML += adp_privacy_policy;
+                }
+            }
+            return;
+        } catch (err) {
+            userSessionManager.log("ERROR", "privacyPolicy:DDC", err.toString());
+        }
+    }
+}
+	
+		
+		if(trackingNumbersJSON !== "{}") {
+          var phoneElements = Sizzle(phoneSwapSelectors);
+          phoneSwap(false, phoneElements);    
+		}
+
+		var phoneSwapMutationHandler = function(target, mutationType){ 
+			try{
+				if(target) {
+					var newIframe = Sizzle('iframe[src^="' + window.location.protocol + '//' + window.location.host + '"]', target[0]);
+
+					if(newIframe.length === 0 && target[0] instanceof HTMLElement && Sizzle.matchesSelector(target[0], 'iframe[src^="' + window.location.protocol + '//' + window.location.host + '"]')) {
+						newIframe = target;
+					}
+
+					processIframeForms(newIframe);
+
+					if(!skipDomObserve && trackingNumbersJSON !== "{}"){
+						for(var i = 0; i < target.length; i++) {
+							var foundNew = false;
+							var node = target[i];
+							if(swapcount < MAX_SWAPS && typeof node !== 'undefined' && node 
+								&& (!node.tagName || (node.tagName && node.tagName.toUpperCase() !== 'SCRIPT')) ) {
+                                var phoneElements = [];  
+                                if(phoneSwapSelectors === 'body' || mutationType === 'characterData') {
+                                	phoneElements.push(node);
+                                } else {
+                            		phoneElements = Sizzle(phoneSwapSelectors, node);
+                                }
+                                phoneSwap(true, phoneElements);
+							}
+						}
+					}
+				}
+			}catch(e){
+				userSessionManager.log("ERROR", "observeDOM body callback", e.toString());
+			}
+		};
+		
+		if(PHONESWAP_MUTATIONHANDLER_DELAY && PHONESWAP_MUTATIONHANDLER_DELAY > 0) {
+			setTimeout(observeDOM, PHONESWAP_MUTATIONHANDLER_DELAY, document.body, phoneSwapMutationHandler);
+		} else {
+			observeDOM(document.body, phoneSwapMutationHandler);
+		}
+		
+		processStaticForms();
+		processThirdPartyIFrames();
+
+		var adp_custom_params = {};
+		
+		if(!_vdpProcessed){
+			var values = processVDP();
+			
+			if (typeof values !== 'undefined'){
+				
+				userSessionManager.VDP(values);	
+
+			    if(typeof values[7] !== 'undefined' && values[7]) {
+			        adp_custom_params.dynx_itemid = values[7]; // VIN
+			        adp_custom_params.dynx_pagetype = 'offerdetail';
+			        // price fallbacks
+			        if (typeof values[11] !== 'undefined' && values[11]) {
+			            adp_custom_params.dynx_totalvalue = values[11]; // currentPrice
+			        } else if (typeof values[10] !== 'undefined' && values[10]) {
+			            adp_custom_params.dynx_totalvalue = values[10]; // MSRP
+			        } else {
+			            // hardcoded fallback price for better remarketing
+			            adp_custom_params.dynx_totalvalue = 30000; 
+			        }
+		            if(typeof facebook_pixel_id !== 'undefined' && facebook_pixel_id && typeof fbq !== 'undefined') {
+		                fbq('track', 'ViewContent', {
+		                    content_type: 'vehicle',
+		                    content_ids: [values[7]],
+		                    year: values[0],
+		                    make: values[1],
+		                    model: values[2],
+		                    price:  values[11],
+		                    currency: 'USD'
+		                });                
+		            }				        
+			    } 	
+			}
+		}
+
+		if(remarketingID != null && remarketingID != "null" && remarketingID != "") {
+			if(!adp_custom_params.dynx_pagetype) {
+		        if(window.location.pathname === '/') {
+		            adp_custom_params.dynx_pagetype = 'home';
+		        } else {
+		            adp_custom_params.dynx_pagetype = 'other';
+		        }
+			}
+	        adp_custom_params.sent_to = 'AW-'+remarketingID;
+	        gtag('event', 'page_view', adp_custom_params);  
+		}
+
+
+
+		if(processLocalStorage) {
+			var iframeUrl = fourEyesURL == "localhost" ? 
+				window.location.protocol + '//' + fourEyesURL + '/UtilServlet?action=iframeLoader&did=' + did + '&origin=' + encodeURIComponent(document.location.origin) : 
+				'https://' + fourEyesURL + '/UtilServlet?action=iframeLoader&did=' + did + '&origin=' + encodeURIComponent(document.location.origin);
+
+			xdLocalStorage.init({
+				iframeUrl: iframeUrl,
+				initCallback: function () {
+					xdLocalStorage.getItem(gt_id_name, function (xdGTID) {
+						if(xdGTID.value && gtID !== xdGTID.value) {
+							gtID = xdGTID.value;
+						}
+						xdLocalStorage.setItem(gt_id_name, gtID, function (data) {
+							if(data.success) {
+								localStorage.setItem(gt_id_name, gtID);
+								var callGUserTrack = true;
+								if(typeof(sessionStorage) !== 'undefined' ) {
+									var lastGTReported = sessionStorage.getItem('adp_gtid_reported');
+									if(lastGTReported && (Date.now() - lastGTReported < userSessionExpirationThresholdInMs) ) {
+										callGUserTrack = false;
+									}
+								}
+								if(callGUserTrack) { 
+									userSessionManager.gUserTrack(); 
+								} 
+							} else {
+								userSessionManager.log("ERROR", "xdLocalStorage", "could not setItem: " + gtID); 
+							}
+						});
+					});
+				}
+			});
+		}
+
+		if(!disableStatusPing) {
+			setStatusInterval();
+		}
+	}
+
+	if(window.adpFEInit) {
+		userSessionManager.log("ERROR", "adpFEInit", "FE Already Running: " + document.location.hostname); 
+	} else {
+		window.adpFEInit = true;
+		if(document.readyState == 'complete' || (document.readyState != 'loading' && !document.documentElement.doScroll)) {
+			feInit();
+		} else {
+			document.addEventListener('DOMContentLoaded', feInit);
+		}
+	}
+
+	var extTrackingIdCheck = 0;
+	var extTrackingIdSearch = setInterval(function() {
+		extTrackingIdCheck++;
+		if(typeof s != 'undefined' && typeof s.visitor != 'undefined' && typeof s.visitor.getMarketingCloudVisitorID === "function") {
+			var extId = s.visitor.getMarketingCloudVisitorID();
+			clearInterval(extTrackingIdSearch);
+			if(typeof(window.sessionStorage) != 'undefined' && !window.sessionStorage.getItem('adp_etid_found')){
+				userSessionManager.sendExtId('1', extId);
+			}
+		} else if(extTrackingIdCheck >= 10) {
+			clearInterval(extTrackingIdSearch);
+		}
+	},1000);
+
+	var digitalDataCheck = 0;
+	var digitalDataSearch = setInterval(function() {
+		digitalDataCheck++;
+		try {
+			if(typeof digitalData !== 'undefined' && digitalData.page.pageInfo) { 
+				digitalData.page.pageInfo.fourEyesID = externalSessionID;
+				clearInterval(digitalDataSearch);
+			} else if(digitalDataCheck >= 10) {
+				clearInterval(digitalDataSearch);
+			}
+		} catch(e) { clearInterval(digitalDataSearch); }
+	},500);
+
+	function stripAndCollapse(value) {
+		var tokens = value.match(/[^\x20\t\r\n\f]+/g) || [];
+
+		return tokens.join(' ');
+	}
+
+	// Check if element has the given class (stolen from jQuery) svg does not work with this
+	function hasClass(element, className) {
+		if(element.nodeType === 1 && 
+			 typeof element.className === 'string' && 
+			(' ' + stripAndCollapse(element.className) + ' ').indexOf(className) > -1) {
+			return true;
+		}
+
+		return false;
+	}
+})(Sizzle.noConflict());

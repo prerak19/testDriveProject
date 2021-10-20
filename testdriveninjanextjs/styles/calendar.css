@@ -1,0 +1,78 @@
+/**
+ * /* @calander css override
+ *
+ * @format
+ */
+
+.react-calendar {
+  width: 100% !important;
+  background: none !important;
+  border: none !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  color: #7e829d;
+}
+
+/* weekend name title  */
+.react-calendar__month-view__weekdays {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15.1429px;
+  line-height: 19px;
+  /* or 125% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.504762px;
+
+  color: #7e829d;
+  text-transform: capitalize;
+
+  opacity: 0.7;
+}
+
+.react-calendar button {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 41px;
+  color: #7e829d;
+}
+
+/* .react-calendar__tile--now {
+  background: #ffff76 ;
+  background: none !important;
+} */
+.react-calendar__tile--active {
+  background: #006edc;
+  color: white !important;
+  border-radius: 50%;
+  padding: 27px;
+}
+
+.manualReactCalnedar .react-calendar__month-view__days button {
+  max-width: 50px !important;
+  height: 50px !important;
+  width: 50px !important;
+  margin: 10px 22px !important;
+  line-height: 26px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .react-calendar button {
+    line-height: 30px;
+  }
+  .react-calendar__month-view__days > button {
+    max-width: 40px !important;
+    height: 40px !important;
+    width: 40px !important;
+    line-height: 20px;
+    margin: 0 !important;
+  }
+}

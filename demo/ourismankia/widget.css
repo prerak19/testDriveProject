@@ -1,0 +1,72 @@
+.inventory-search-payment .ddc-payment-lease,
+.inventory-search-payment .ddc-payment-loan,
+.inventory-search-payment .ddc-payment-internetprice {
+	text-align: center;
+}
+
+.inventory-search-payment .ddc-inventory-count {
+	font-size: 60px;
+	display: block;
+}
+
+.inventory-search-payment .ui-slider {
+	top: 5px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.ddc-span10 .inventory-search-payment .ui-slider,
+.ddc-span11 .inventory-search-payment .ui-slider {
+	width: 75%;
+}
+
+.ddc-span8 .inventory-search-payment .ui-slider,
+.ddc-span9 .inventory-search-payment .ui-slider {
+	width: 70%;
+}
+
+.ddc-span7 .inventory-search-payment .ui-slider {
+	width: 65%;
+}
+
+.ddc-span6 .inventory-search-payment .ui-slider {
+	width: 60%;
+}
+
+.ddc-span5 .inventory-search-payment .ui-slider,
+.ddc-span4 .inventory-search-payment .ui-slider,
+.ddc-span3 .inventory-search-payment .ui-slider,
+.ddc-span2 .inventory-search-payment .ui-slider,
+.ddc-span1 .inventory-search-payment .ui-slider {
+	width: 45%;
+}
+
+.inventory-search-payment .form-group {
+	position: relative;
+	height: 30px;
+}
+
+.inventory-search-payment .ui-slider-value {
+	position: absolute;
+	width: 100%;
+	font-size: 24px;
+	line-height: 24px;
+	text-indent: -9999em;
+}
+
+.inventory-search-payment .ui-slider-min-value,
+.inventory-search-payment .ui-slider-max-value {
+	position: absolute;
+	left: 5px;
+	display: inline-block;
+	text-indent: 0;
+}
+
+.inventory-search-payment .ui-slider-max-value {
+	right: 5px;
+	left: auto;
+}
+
+.inventory-search-payment .slider-instructions { 
+	margin-bottom: 15px;
+}

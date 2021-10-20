@@ -1,0 +1,8 @@
+/* william.thompson | position free-form index search */
+.index .inventory-search-form.index-free-search:not(.wide) form { width: 600px; margin: 0 auto;  }
+.index .inventory-search-form.index-free-search:not(.wide) input.search { width: 500px;  }
+.index .inventory-search-form.index-free-search.wide input.search { width: 855px;  }
+.index .inventory-search-form.index-free-search button { position: relative; top: -49px; }
+
+/* ddcsamp 09904022 */
+.page-header .home-logolink img { border-right: 2px solid #808080;}

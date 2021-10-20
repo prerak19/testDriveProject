@@ -1,0 +1,211 @@
+/*ddcegoldfried- prevent image stacking effect in DEAs*/
+.wysiwyg-image {margin: 0; display: inline;}
+
+/*ddcegoldfried- adjusted nav width to accommodate a 5th nav item*/
+.navbar-nav .nav > li > a, .navbar-nav .ddc-nav-inline > li > a {min-width: 95px;}
+
+/*ddcegoldfried- VDP removed underline on VDP button*/
+.vdp .tradein a {text-decoration: none;}
+
+/* DNA5024511 ddcdmeline */
+.index .links-list a {background:#b81d33;height:70px;padding-top:15px;}
+.index .links-list a.loaner,.index .links-list a.wash {padding-top:24px;}
+
+/*renee.laporte*/
+.slideControls {bottom: 5px;}
+
+/* DNA5043576 ddcbthyng */
+.index .links-list.customIndexButtons .btn {background-color: #787777;height:50px}
+.index .links-list.customIndexButtons .btn:hover {background-color: #2E2E2E;}
+.index .model-selector-responsive-carousel .model-details-item {padding: 0 5px;}
+.index .model-selector-responsive-carousel .fullname {margin-bottom: 5px;}
+.index .model-selector-responsive-carousel .links  a {padding: 0px;}
+.index .model-selector-responsive-carousel .hproductPhoto {min-height: 80px;}
+
+/* dtannasaponjyan DNA5060656 */
+.index .custom-model-selector table.wysiwyg-table td b a {text-decoration:none;}
+
+/*renee.laporte changing slideshow background color*/
+.slideshow-background {background-color: #ffffff;}
+
+/* ddchenryl DNA5160588 */ 
+.hproduct[data-classification="exotic"] .incentive-list {display: none;} 
+
+/* Start 'vdp-new-price-value-rebate' (do not modify this line) */
+/* Modified by ddcmeghanw on 02/23/16 12:49 PM EST */
+.inventory-detail-pricing .inv-type-new.pricing .rebate .price { font-style: normal; font-weight: bold; text-decoration: none; font-size: 18px; color: #E01B1B; }
+/* End 'vdp-new-price-value-rebate' (do not modify this line) */
+
+/* Start 'vdp-new-price-value-final-price' (do not modify this line) */
+/* Modified by ddcdoran on 11/07/16 06:25 PM EST */
+.vdp .inv-type-new.pricing .final-price .price { text-decoration: none; font-weight: bold; font-size: 18px; color: #000000; }
+/* End 'vdp-new-price-value-final-price' (do not modify this line) */
+
+/* ddchenryl DNA5282332 */ 
+.vdp li.stockNumber, .vdp li.vin {color: #0A26C4; }
+.vdp li.stockNumber i {color: #000;}
+
+
+
+
+/* M-00210598 ddcjoshc */
+.index .inventory-featured-default .pricing .value,.inventory-listing-default .inv-type-new .pricing .discount .value { color:#2BB300; }
+.inventory-listing-default .inv-type-new .pricing .stackedConditionalFinal.final-price .value { color:#000; }
+
+
+
+/* Start 'vlp-new-price-label-final-price' (do not modify this line) */
+/* Modified by cjacob1 on 06/04/20 12:56 PM EDT */
+.vlp .inventoryList .item.inv-type-new .pricing .final-price .label { text-decoration: none; font-weight: normal; font-size: 14px; color: #0B100B; }
+/* End 'vlp-new-price-label-final-price' (do not modify this line) */
+
+/* Start 'vlp-new-price-value-final-price' (do not modify this line) */
+/* Modified by ericmurray on 11/03/16 06:21 PM EDT + ddcluker M-00215600 */
+.vlp .inventoryList .item.inv-type-new .pricing .final-price .value { text-decoration: none; font-weight: bold; font-size: 15px; color: #000; }
+/* End 'vlp-new-price-value-final-price' (do not modify this line) */
+
+/* M-00213785 william.thompson */
+.index .position-boxes { margin-right: -10px; margin-left: -10px; }
+.index .position-boxes .links-list a { background: none; height: auto; }
+
+/* Start 'vlp-used-price-label-internetPrice' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:48 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .internetPrice .label { text-decoration: none; font-weight: bold; font-size: 11.9px; color: #1E4281; }
+/* End 'vlp-used-price-label-internetPrice' (do not modify this line) */
+
+/* Start 'vlp-used-price-label-abSub' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:50 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .abSub .label { text-decoration: none; font-weight: bold; font-size: 11.9px; color: #787777; }
+/* End 'vlp-used-price-label-abSub' (do not modify this line) */
+
+/* Start 'vlp-used-price-value-internetPrice' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:51 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .internetPrice .value { text-decoration: none; font-weight: bold; font-size: 18.2px; color: #1e4281; }
+/* End 'vlp-used-price-value-internetPrice' (do not modify this line) */
+
+/* Start 'vlp-used-price-value-abSub' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:51 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .abSub .value { text-decoration: none; font-weight: bold; font-size: 14px; color: #787777; }
+/* End 'vlp-used-price-value-abSub' (do not modify this line) */
+
+/* Start 'vlp-used-price-label-final-price' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:51 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .final-price .label { text-decoration: none; font-weight: bold; font-size: 11.9px; color: #2BB300; }
+/* End 'vlp-used-price-label-final-price' (do not modify this line) */
+
+/* Start 'vlp-used-price-value-final-price' (do not modify this line) */
+/* Modified by dougseaburg on 11/04/16 11:52 AM EST */
+.vlp .inventoryList .item.inv-type-used .pricing .final-price .value { text-decoration: none; font-weight: bold; font-size: 23.8px; color: #2BB300; }
+/* End 'vlp-used-price-value-final-price' (do not modify this line) */
+
+/*eric.murray m-00213997 */
+.M-00213997 .final-price,
+.M-00213997 .final-price .label {color: #2BB300 ;}
+.M-00213997 .abSub .value,
+.M-00213997 .abSub .label {color: #787777;}
+.M-00213997 .internetPrice .value,
+.M-00213997 .internetPrice .label {color: #1E4281 !important;}
+
+/* M-00218367 billyh */
+.alias-inventory-featured-new .pricing .msrp .value {color: #787777;}
+.alias-inventory-featured-new .pricing .askingPrice .value {color: #B81D33;}
+.alias-inventory-featured-new .pricing .askingPrice .label {color: #B81D33;}
+
+/* Start 'vdp-new-price-value-askingPrice' (do not modify this line) */
+/* Modified by jacobmalenfant on 08/03/17 11:40 AM EST */
+.vdp .inv-type-new.pricing .askingPrice .price { text-decoration: none; font-weight: bold; font-size: 18px; color: #787777; }
+/* End 'vdp-new-price-value-askingPrice' (do not modify this line) */
+
+/* Start 'vdp-new-price-label-askingPrice' (do not modify this line) */
+/* Modified by jacobmalenfant on 08/03/17 11:40 AM EST */
+.vdp .inv-type-new.pricing .askingPrice .label { text-decoration: none; font-weight: bold; font-size: 15.3px; color: #787777; }
+/* End 'vdp-new-price-label-askingPrice' (do not modify this line) */
+
+/* Start 'vdp-new-price-value-msrp' (do not modify this line) */
+/* Modified by ddcdoran on 11/07/16 06:26 PM EST */
+.vdp .inv-type-new.pricing .msrp .price { text-decoration: none; font-weight: bold; font-size: 23.4px; color: #787777; }
+/* End 'vdp-new-price-value-msrp' (do not modify this line) */
+
+/* Start 'vlp-new-price-label-askingPrice' (do not modify this line) */
+/* Modified by ddcdoran on 11/07/16 06:45 PM EST */
+.vlp .inventoryList .item.inv-type-new .pricing .askingPrice .label { text-decoration: none; font-weight: bold; font-size: 11.9px; color: #B81D33; }
+/* End 'vlp-new-price-label-askingPrice' (do not modify this line) */
+
+/* ddcluker M-00215600 */
+.vlp .inventoryList .item.inv-type-new .pricing .askingPrice .value { color: #B81D33; }
+
+/* Start 'vlp-new-price-value-msrp' (do not modify this line) */
+/* Modified by ddcrro on 11/18/16 02:21 PM EST */
+.vlp .inventoryList .item.inv-type-new .pricing .msrp .value { text-decoration: none; font-weight: bold; font-size: 18.2px; color: #787777; }
+/* End 'vlp-new-price-value-msrp' (do not modify this line) */
+
+/* M-00233738 ddcbobc */
+.index .custom-model-selector { background: #fff; margin-bottom: 0; }
+
+/* ddcluker M-00240580 */
+.cst-year { position: absolute; right: 318px; width: 11%; top: 35px; }
+.shrink-header-nav .cst-year { display: none; }
+.cst-year img { image-rendering: -webkit-optimize-contrast; }
+
+/* M-00252415 chris.diego */
+.index .backgroundWhite {background:white;}
+
+/* cbenson M-00431982 */
+.alias-auto-certified-used-details ul li span.ePrice:after, .alias-auto-used-details ul li span.ePrice:after, .alias-auto-bargain-details ul li span.ePrice:after { content: "No Additional Reconditioning Fees Added"; font-size: 0.75em; float: right; color: #B81D33; }
+
+/*cjschneide M-00435454*/
+li.cstDisc > span {color:#B81D33;font-size:12px;}
+
+/* M-00467637 billyh */
+.inventory-listing-default .inv-type-new .pricing .discount .value {color: #C2172B;}
+.vlp .inventoryList .item.inv-type-new .pricing .final-price .label, .vlp .inventoryList .item.inv-type-new .pricing .final-price .value {color: #008000;}
+.vlp .inventoryList .item.inv-type-new .pricing .final-price .label {font-size: 14px;}
+.vlp .inventoryList .item.inv-type-new .pricing .final-price .value {font-size: 19px;}
+.inventory-detail-pricing .pricing.inv-type-new .discount .price {color: #C2172B;}
+.vdp .inv-type-new.pricing .stackedFinal.final-price .price {font-size: 24px; color: #008000;}
+.inventory-detail-pricing .inv-type-new.pricing .stackedFinal.final-price .label {font-size: 18px; color: #008000;}
+
+/* ddcsamp 05608617 */
+.index .inventory-search-facetbrowse.cc05608617 fieldset > div:not(.hide) {width: 91%; display: inline-block;}
+.index .inventory-search-facetbrowse.cc05608617 .yui3-u-1-6 {width: 19.7%; padding: 0 5px;}
+.index .inventory-search-facetbrowse.cc05608617 .yui3-u-1-6  .form-control {padding-left: 5px;}
+.index .inventory-search-facetbrowse.cc05608617 .btn.ui-button-submit {margin-top: -58px;}
+
+/* Start 'vdp-used-price-label-final-price' (do not modify this line) */
+/* Modified by tjbielarsk on 02/06/19 01:33 PM EST */
+.vdp .inv-type-used.pricing .final-price .label { text-decoration: none; font-weight: bold; font-size: 13.6px; color: #2bb300; }
+/* End 'vdp-used-price-label-final-price' (do not modify this line) */
+
+/* Start 'vdp-used-price-value-final-price' (do not modify this line) */
+/* Modified by tjbielarsk on 02/06/19 01:33 PM EST */
+.vdp .inv-type-used.pricing .final-price .price { text-decoration: none; font-weight: bold; font-size: 28.8px; color: #2bb300; }
+/* End 'vdp-used-price-value-final-price' (do not modify this line) */
+
+/* Start 'vdp-used-price-value-abSub' (do not modify this line) */
+/* Modified by tjbielarsk on 02/06/19 01:34 PM EST */
+.vdp .inv-type-used.pricing .abSub .price { text-decoration: none; font-weight: bold; font-size: 16px; color: #666666; }
+/* End 'vdp-used-price-value-abSub' (do not modify this line) */
+
+/* wabbey */
+.navbar-nav .nav > li > a[href="/service/schedule.htm"]{color:red;}
+.navbar-nav .nav > li > a[href="/service/schedule.htm"] span{color:red;}
+
+/* Start 'vdp-new-price-label-conditional-final-price' (do not modify this line) */
+/* Modified by cjacob1 on 06/04/20 12:52 PM EDT */
+.vdp .inv-type-new.pricing-detail .conditional-final-price .price-label { text-decoration: none; font-size: 18px; color: #36763A; }
+/* End 'vdp-new-price-label-conditional-final-price' (do not modify this line) */
+
+/* Start 'vdp-new-price-value-conditional-final-price' (do not modify this line) */
+/* Modified by cjacob1 on 06/04/20 12:53 PM EDT */
+.vdp .inv-type-new.pricing-detail .conditional-final-price .price-value { text-decoration: none; font-weight: 800; font-size: 22.5px; color: #447644; }
+/* End 'vdp-new-price-value-conditional-final-price' (do not modify this line) */
+
+/* Start 'vlp-new-price-label-stackedConditionalFinal' (do not modify this line) */
+/* Modified by cjacob1 on 06/04/20 12:57 PM EDT */
+.vlp .inventoryList .item.inv-type-new .pricing .stackedConditionalFinal .label { text-decoration: none; font-weight: 600; font-size: 13.9px; color: #398341; }
+/* End 'vlp-new-price-label-stackedConditionalFinal' (do not modify this line) */
+
+/* Start 'vlp-new-price-value-stackedConditionalFinal' (do not modify this line) */
+/* Modified by cjacob1 on 06/04/20 12:57 PM EDT */
+.vlp .inventoryList .item.inv-type-new .pricing .stackedConditionalFinal .value { text-decoration: none; font-weight: bold; font-size: 14px; color: #407735; }
+/* End 'vlp-new-price-value-stackedConditionalFinal' (do not modify this line) */

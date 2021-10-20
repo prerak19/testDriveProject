@@ -1,0 +1,121 @@
+/** @format */
+
+.setdriveheading h1 {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 63px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #212545;
+}
+
+.bgColor {
+  background: #e5e5e5;
+}
+
+.setdriveheading p {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 231.4%;
+  color: #7e829d;
+  text-align: center;
+}
+.testDriveImage {
+  height: auto;
+  width: 60% !important;
+}
+.setdriveDesc h4 {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #324ee2;
+}
+
+.setdriveDesc p {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  color: #7e829d;
+}
+.setdriveDesc h3 {
+  font-family: poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #212545;
+}
+.setdriveDesc {
+  position: relative;
+  top: 10%;
+}
+
+.addcalender {
+  display: flex;
+  justify-content: center;
+}
+.upperdiv {
+  margin: 20px 0px;
+  background: #d2d0d0;
+  /* opacity: 0.5; */
+  border-radius: 30px;
+}
+.innerDiv {
+  background: #f1eded;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .setdriveDesc {
+    padding: 0% 5%;
+  }
+  .testDriveImage {
+    width: 100% !important;
+  }
+  .addcalender {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    padding: 0% 5%;
+  }
+
+  .addcalender button:nth-child(1) {
+    width: 100%;
+    margin: 8px 0px;
+  }
+  .addcalender button:nth-child(2) {
+    width: 100%;
+    margin: 8px 0px;
+  }
+
+  .addcalender {
+    display: block;
+  }
+  .setdriveheading h1 {
+    font-size: 28px;
+    line-height: 33px;
+  }
+  .setdriveDesc h4 {
+    text-align: left;
+    padding-left: 2px;
+  }
+
+  .setdriveDesc p {
+    text-align: left;
+    padding-left: 2px;
+  }
+  .setdriveDesc h3 {
+    text-align: left;
+    padding-left: 2px;
+  }
+}

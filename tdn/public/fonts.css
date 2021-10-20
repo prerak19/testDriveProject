@@ -1,0 +1,29 @@
+/* @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Roboto'),
+    url(/fonts/roboto.woff2)
+    format('woff2');;
+
+  } */
+
+@font-face {
+  font-display: swap;
+  font-family: 'poppins-bold';
+  src: local('Poppins-Bold') url('/Public/fonts/Poppins-Bold') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'poppins';
+  src: local('Poppins-Bold') url('/Public/fonts/Poppins-Black') format('ttf');
+}
+
+@font-face {
+  font-display: swap;
+  font-weight: 600;
+  font-family: 'poppins-semi-bold';
+  src: local('Poppins-Bold') url('/Public/fonts/Poppins-SemiBold') format('ttf');
+}

@@ -1,0 +1,53 @@
+/** @format */
+
+.listType {
+  list-style-type: none;
+  height: 45vh;
+  overflow: auto;
+  padding: 15px;
+}
+
+.list {
+  border: 0.5px solid #6178f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 15px;
+  /* width: 50%; */
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: poppins;
+  font-style: normal;
+  font-size: 16px;
+}
+.slotActive {
+  background: #6178f0;
+  color: white;
+
+  /* border: 2px solid #6178f0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 15px;
+  /* width: 50%; */
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.list:hover {
+  background-color: rgb(232, 232, 232);
+  /* opacity: 0.1; */
+}
+
+@media only screen and (max-width: 768px) {
+  .listType {
+    height: auto;
+    margin-bottom: 90px;
+  }
+}

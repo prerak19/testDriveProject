@@ -1,0 +1,166 @@
+/** @format */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  max-width: 766px;
+}
+.container > * {
+  box-sizing: border-box;
+}
+.stepNumbersContainer {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.stepNamesContainer {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+}
+.active,
+.inactive {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.active {
+  color: white;
+  background: #324ee2;
+  border: 1px solid #324ee2;
+  box-shadow: 0px 5px 10px rgba(50, 78, 226, 0.3);
+}
+.inactive {
+  border: 0.5px solid grey;
+  opacity: 0.5;
+}
+
+.stepNumberBox {
+  display: flex;
+
+  min-width: 50px;
+  height: 70%;
+}
+.stepNameBox,
+.stepNameBoxInactive {
+  display: flex;
+  min-width: 50px;
+  font-size: 12px;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.stepNameBoxInactive {
+  opacity: 0.5;
+}
+.stepNumber,
+.stepNumberBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+}
+.stepNumberBg {
+  background-color: rgba(50, 78, 226, 0.05);
+}
+
+.stepText {
+  font-size: 12px;
+}
+.step {
+  height: 100%;
+  width: 25%;
+}
+
+.pathEnd,
+.pathStart {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  min-height: 50px;
+}
+.pathStart {
+  justify-content: flex-start;
+}
+.pathEnd {
+  justify-content: flex-end;
+}
+
+.dot {
+  height: 3px;
+  width: 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10%;
+}
+
+.leftMargin {
+  margin-left: 2%;
+}
+.rightMargin {
+  margin-left: 2%;
+}
+
+@media only screen and (max-width: 768px) {
+  .stepNameBoxInactive {
+    opacity: 0;
+    width: 15%;
+    display: none;
+  }
+  .stepNameBox {
+    width: 90%;
+  }
+  .stepNameBox {
+    margin-left: 5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+
+  .pathEnd > .dot:nth-child(1) {
+    display: none;
+  }
+  .pathStart > .dot:nth-child(1) {
+    display: none;
+  }
+  .pathEnd > .dot:nth-child(2) {
+    position: relative;
+    left: -75%;
+  }
+  .pathEnd > .dot:nth-child(3) {
+    position: relative;
+    left: -25%;
+  }
+  .pathStart > .dot:nth-child(2) {
+    position: relative;
+    left: 25%;
+  }
+  .pathStart > .dot:nth-child(3) {
+    position: relative;
+    left: 70%;
+  }
+  .dot {
+    max-height: 2px;
+    min-width: 4px;
+  }
+  .active,
+  .inactive {
+    min-width: 28px;
+    min-height: 28px;
+  }
+}

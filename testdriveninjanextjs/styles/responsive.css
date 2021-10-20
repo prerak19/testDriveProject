@@ -1,0 +1,265 @@
+/**
+ * /* set car drive page responsive
+ *
+ * @format
+ */
+
+.marTopBot20 {
+  margin: 20px 0px;
+}
+.hideForMobile {
+  display: none;
+}
+.padTopBot30 {
+  padding: 30px 0px;
+}
+.setcarSlidercss li.slide {
+  border-radius: 20px;
+}
+.carSlidercss li.slide {
+  border-radius: 20px;
+}
+
+.setcarSlidercss {
+  width: 60%;
+  margin: auto;
+}
+
+.setcarSlidercss li.slide.selected {
+  /* min-width: 70% !important; */
+  opacity: 1;
+}
+
+.setcarSlidercss li.slide {
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: -1222;
+  opacity: 0.6;
+}
+
+/* end  */
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+  /* height property css  */
+
+  .height9 {
+    height: auto;
+  }
+
+  .height100vh {
+    height: auto;
+  }
+
+  .height10 {
+    height: auto;
+  }
+
+  .height15 {
+    height: auto;
+  }
+
+  .height20 {
+    height: auto;
+  }
+
+  .height25 {
+    height: auto;
+  }
+
+  .height30 {
+    height: auto;
+  }
+  .height35 {
+    height: auto;
+  }
+  .height40 {
+    height: auto;
+  }
+  .height45 {
+    height: auto;
+  }
+
+  .height50 {
+    height: auto;
+  }
+  .height55 {
+    height: auto;
+  }
+  .height60 {
+    height: auto;
+  }
+  .height70 {
+    height: auto;
+  }
+  .height80 {
+    height: auto;
+  }
+  .height90 {
+    height: auto;
+  }
+  .height98 {
+    height: auto;
+  }
+  .height100 {
+    height: auto;
+  }
+  .secondContentH {
+    height: auto;
+  }
+  .height94vh {
+    height: auto;
+  }
+
+  /* landing page responsive css  */
+  .hideContent {
+    display: none;
+  }
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+  }
+  .marTopBot20 {
+    margin: 20px 0px;
+  }
+  .marTopBot10 {
+    margin: 10px 0px !important;
+  }
+  .padTopBot30 {
+    padding: 0px 0px;
+  }
+  .top50p {
+    position: absolute;
+    top: 50%;
+  }
+  .flexBt {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* pick day responsive page  */
+  /* car slider css  */
+
+  .setcarSlidercss li.slide {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* landing page responsive css  */
+  .hideContent {
+    display: none;
+  }
+  .marTopBot20 {
+    margin: 20px 0px;
+  }
+  .marTopBot10 {
+    margin: 10px 0px;
+  }
+  .sechduleBody {
+    height: 0%;
+  }
+  .progContent {
+    height: 0%;
+  }
+  /* step progress bar  */
+  span.StepBar_stepNameBox__3Q-Ja {
+    text-align: center;
+  }
+  span.StepBar_pathEnd__xI7cI {
+    min-height: 63px;
+  }
+  .StepBar_stepNumberBox__3HFHt {
+    height: auto !important;
+  }
+
+  .StepBar_stepNameBoxInactive__2jIGX {
+    width: auto;
+    margin-left: 17px;
+  }
+  .StepBar_step__XceVV {
+    height: auto;
+  }
+
+  .secondContentH {
+    height: auto;
+  }
+  /* end  */
+
+  /* pick location page responsive  */
+  .tab-content {
+    height: 100% !important;
+  }
+
+  /* set car drive page responsive  */
+  .carSlidercss {
+    width: 100%;
+    margin: auto;
+  }
+  .carSlidercss .carousel .thumbs-wrapper {
+    display: none;
+    margin: 20px 0px;
+  }
+  .hideForMobile {
+    display: block;
+  }
+
+  .setcarSlidercss {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .setcarSlidercss button {
+    width: auto !important;
+  }
+  .setcarSlidercss .carousel .control-prev.control-arrow:before {
+    border: none !important;
+    content: url("./../public/prev.png") !important;
+  }
+  .setcarSlidercss .carousel .control-next.control-arrow:before {
+    border: none !important;
+    content: url("./../public/next.png") !important;
+  }
+  .setcarSlidercss .carousel.carousel-slider .control-arrow:hover {
+    background: none !important;
+  }
+  .setcarSlidercss .carousel .control-arrow,
+  .carousel.carousel-slider .control-arrow {
+    opacity: 1 !important;
+  }
+
+  /* end  */
+}
+
+/* Small devices (portrait tablets and large phones, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+.setcarSlidercss .hideContent li.slide.selected {
+  opacity: 1;
+  z-index: 1;
+  margin-right: 0;
+  transform: scale(2);
+}
+
+.setcarSlidercss .hideContent li.slide img {
+  height: 20vh;
+}
+
+.setcarSlidercss .hideContent .carousel .slider-wrapper {
+  padding-top: 105px;
+  height: auto;
+  padding-bottom: 105px;
+}
